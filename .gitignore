@@ -216,3 +216,27 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ===================================================
+# BỔ SUNG RIÊNG CHO DỰ ÁN DATA/MACHINE LEARNING
+# ===================================================
+
+# 1. Chặn toàn bộ thư mục dữ liệu (Tuyệt đối không push data lên Git)
+data/
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.json
+
+# 2. Chặn các thư mục/file chứa mô hình ML đã huấn luyện (dung lượng thường rất lớn)
+models/
+*.pkl
+*.joblib
+*.h5
+*.sav
+
+# 3. Chặn các file Dashboard PowerBI / Tableau (nếu có lưu cục bộ)
+*.pbix
+*.twb
+*.twbx
