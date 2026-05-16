@@ -212,7 +212,7 @@ Phân bổ vai trò (Ghi rõ thế mạnh/công việc dự kiến của từng 
 ---
 - Trạng thái hiện tại: [Mới bắt đầu]
 - Ngày bắt đầu (Sprint 1): [18/5]
-- Deadline tổng (Final Deadline): [15/6]
+- Deadline tổng (Final Deadline): [14/6]
 
 ---
 5. YÊU CẦU ĐẦU RA (Output Preferences)
