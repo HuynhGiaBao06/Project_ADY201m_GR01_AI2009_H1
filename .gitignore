@@ -240,3 +240,15 @@ models/
 *.pbix
 *.twb
 *.twbx
+
+# LaTeX build files
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.gz
+*.fls
+*.fdb_latexmk
+*.synctex.gz
