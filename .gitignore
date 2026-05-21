@@ -252,3 +252,5 @@ models/
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+# Môi trường
+.env
