@@ -251,6 +251,10 @@ models/
 *.gz
 *.fls
 *.fdb_latexmk
+<<<<<<< HEAD
 *.synctex.gz
 # Môi trường
 .env
+=======
+*.synctex.gz
+>>>>>>> feat01-docs-project-document
