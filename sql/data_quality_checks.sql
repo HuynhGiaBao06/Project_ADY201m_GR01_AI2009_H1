@@ -1,4 +1,3 @@
-
 -- 1. KIỂM TRA TÍNH DUY NHẤT VÀ KHÓA CHÍNH (PRIMARY KEY CHECK)
 -- Kiểm tra xem ID có bị trùng lặp hoặc bị NULL hay không.
 SELECT 
@@ -10,6 +9,8 @@ FROM dbo.Predictive_Customer_Churn_DB;
 
 -- 2. KIỂM TRA DỮ LIỆU KHUYẾT THIẾU (NULL VALUE CHECK)
 -- Đếm số lượng dòng bị trống (NULL) ở các cột quan trọng phục vụ phân tích.
+-- Vì các cột trong schema của bạn đều có thuộc tính 'NOT NULL', 
+-- câu lệnh này giúp kiểm tra xem có dòng nào bị gán giá trị mặc định là 0 hoặc trống hay không.
 SELECT 
     SUM(CASE WHEN Churn IS NULL THEN 1 ELSE 0 END) AS null_churn,
     SUM(CASE WHEN Tenure IS NULL THEN 1 ELSE 0 END) AS null_tenure,
@@ -19,7 +20,7 @@ SELECT
 FROM dbo.Predictive_Customer_Churn_DB;
 
 
--- 3. KIỂM TRA TÍNH NHẤT QUÁN LOGIC VỀ CHI PHÍ VÀ THỜI GIAN (LOGICAL CONSISTENCY)
+-- 3. KIỂM TRA TÍNH NHẤT QUÁN LOGIC (LOGICAL CONSISTENCY)
 -- Số tháng sử dụng (Tenure) = 0 thì TotalCharges phải bằng 0 (hoặc NULL tùy cách hệ thống ghi nhận).
 -- Nếu Tenure > 0, TotalCharges không thể bằng 0 hoặc nhỏ hơn MonthlyCharges một cách phi lý.
 SELECT 
@@ -68,8 +69,6 @@ GROUP BY
     Contract,
     PaymentMethod;
  
-
-
 -- 5. KIỂM TRA GIÁ TRỊ NGOẠI LAI / BẤT THƯỜNG Ở CÁC CỘT SỐ (NUMERICAL OUTLIERS)
 -- Xem giá trị tối thiểu, tối đa để phát hiện các con số "bất bình thường" (ví dụ: số tháng âm, hoặc cước phí quá cao).
 SELECT 
