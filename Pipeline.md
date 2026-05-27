@@ -1,3 +1,6 @@
+# Sơ đồ Khung kiến trúc Dữ liệu & Huấn luyện Mô hình (Pipeline)
+
+```text
 [ Dữ liệu thô (Raw Data) ]
                                    │
                                    ▼
@@ -33,3 +36,4 @@ GIAI ĐOẠN 1: LUỒNG CHUNG (Global Pipeline - Áp dụng cho TẤT CẢ mô h
                  ▼                                   ▼
        Bước 3: Huấn luyện mô hình          Bước 3: Huấn luyện mô hình
        (Logistic Regression)               (XGBoost / Random Forest)
+```
