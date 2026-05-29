@@ -2,7 +2,7 @@
 CREATE TABLE Predictive_Customer_Churn_DB (
     ID VARCHAR(50) PRIMARY KEY,              -- Chuỗi định danh khách hàng, Khóa chính
     Churn BIT NOT NULL,                      -- Dữ liệu 0/1 tối ưu thành kiểu BIT
-    SeniorCitizen VARCHAR(50) NOT NULL,      -- Chuyển đổi thành VARCHAR(50) theo yêu cầu
+    SeniorCitizen BIT NOT NULL,              -- Dữ liệu 0/1 tối ưu thành kiểu BIT
     Partner BIT NOT NULL,                    -- Dữ liệu 0/1 tối ưu thành kiểu BIT
     Dependents VARCHAR(50) NOT NULL,         -- Chuyển đổi thành VARCHAR(50) theo yêu cầu
     InternetService VARCHAR(50) NOT NULL,    -- Chuyển đổi thành VARCHAR(50) theo yêu cầu
@@ -17,4 +17,7 @@ CREATE TABLE Predictive_Customer_Churn_DB (
     MonthlyCharges DECIMAL(10,4) NOT NULL,   -- Số thập phân cho chi phí hàng tháng
     TotalCharges DECIMAL(12,4) NOT NULL      -- Số thập phân cho tổng chi phí
 );
+GO
+
+DROP TABLE IF EXISTS [dbo].[Predictive_Customer_Churn_DB];
 GO
