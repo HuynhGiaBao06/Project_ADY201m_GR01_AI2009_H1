@@ -35,31 +35,21 @@ Phân tích các yếu tố khiến khách hàng ngừng sử dụng dịch vụ
 
 5. Kế hoạch Phân tích & Triển khai Kỹ thuật
 
-5.1. Lưu trữ & Truy xuất Dữ liệu với SQL (Data Storage & Querying)
+5.1. Kiến trúc Luồng dữ liệu (Data Pipeline) & SQL
 
-* Vai trò của SQL: Đóng vai trò là cơ sở dữ liệu (Database) dùng để lưu trữ và quản lý tập dữ liệu IBM Telco.
-* Thực thi:
-  * Thiết lập cấu trúc bảng (CREATE TABLE) cho thông tin khách hàng và dịch vụ.
-  * Chỉ sử dụng SQL để viết các câu lệnh truy vấn (SELECT, JOIN, WHERE) nhằm trích xuất tập dữ liệu theo nhóm và đẩy vào môi trường Python. Không thực hiện xử lý logic hay tính toán phức tạp trên SQL.
+Data Cleaning & Ingestion (Python -> SQL): Dữ liệu thô (Raw Data) được xử lý làm sạch cơ bản trên Python (xử lý missing/null/sai format). Sau đó, tập dữ liệu sạch này được đẩy (ingest) lên cơ sở dữ liệu Azure SQL.
 
-5.2. Tiền xử lý, Trực quan hóa & Phân tích bằng Python (Data Processing & Visualization)
+Data Storage & Views (SQL): Thiết lập cấu trúc bảng (CREATE TABLE) lưu trữ dữ liệu. Chỉ sử dụng SQL để tạo các VIEW (SELECT các cột cần thiết) và thực thi các câu lệnh truy vấn phục vụ phân tích EDA. Không thực hiện xử lý logic, tính toán phức tạp hay tạo biến mới (Feature Engineering) bằng T-SQL để đảm bảo luồng Pipeline chuẩn.
 
-Toàn bộ logic làm sạch dữ liệu, EDA và trực quan hóa đều được thực hiện trên Python theo kiến trúc 2 giai đoạn.
+5.2. Tiền xử lý, Kỹ nghệ Đặc trưng & Trực quan hóa bằng Python
+Toàn bộ quy trình chuẩn bị dữ liệu cho mô hình được thực hiện qua kiến trúc nối tiếp sau khi trích xuất (Extract) dữ liệu từ SQL View về Pandas DataFrame:
 
-* Tiền xử lý - Giai đoạn 1 (Global): Dùng pandas để làm sạch cơ bản, điền các giá trị bị thiếu (missing values), mã hóa các biến phân loại (Categorical encoding) và thực hiện Feature Engineering. Tuyệt đối giữ nguyên dữ liệu ngoại lai (outliers) ở bước này.
-* Tiền xử lý - Giai đoạn 2 (Local): Sử dụng `sklearn.pipeline.Pipeline` để phân nhánh độc lập. Nhánh mô hình tuyến tính sẽ có bước xử lý outlier và chuẩn hóa (scaling), trong khi nhánh mô hình cây (Tree-based) sẽ nhận trực tiếp dữ liệu thô chứa outlier.
-* Trực quan hóa: Sử dụng seaborn và matplotlib để vẽ Bar Chart, Boxplot và Heatmap nhằm phân tích cước phí và tương quan đặc trưng.
+Tiền xử lý - Giai đoạn 1 (Feature Engineering): Triển khai hàm feature_engineering(df) trên Python để sinh ra các biến mới (như tenure_group, service_diversity...) từ tập dữ liệu kéo về từ SQL. Tuyệt đối giữ nguyên dữ liệu ngoại lai (outliers) ở bước này.
 
-5.3. Huấn luyện & Đánh giá Mô hình (Modeling)
+Tiền xử lý - Giai đoạn 2 (Sklearn Pipelines): Đưa toàn bộ Data (cột gốc + cột mới) vào ColumnTransformer. Chia làm 2 nhánh huấn luyện song song:
 
-* Baseline Model: Sử dụng Logistic Regression. Phân tích chi tiết các hệ số hồi quy (coefficients) để hiểu chiều tác động của các biến.
-* Advanced Models: Triển khai Random Forest và XGBoost để tối ưu hóa độ chính xác.
-* Metrics Đánh giá: Accuracy, Precision, Recall, F1-score, ROC-AUC. Ưu tiên tối ưu hóa Recall để tránh bỏ sót khách hàng có nguy cơ rời đi.
+Nhánh Baseline (Logistic Regression): Bắt buộc có custom class xử lý ngoại lai (Capping) và chuẩn hóa (Scaling).
 
-6. Xây dựng Dashboard & Đề xuất Chiến lược
+Nhánh Tree-based (Random Forest, XGBoost): Nhận trực tiếp dữ liệu thô (passthrough), không can thiệp outlier hay scaling.
 
-* Nền tảng: Power BI hoặc Tableau.
-* Thành phần: Tổng quan Churn Rate, Top risk segments (Nhóm rủi ro cao), Feature importance, Churn by Service Type.
-* Khuyến nghị Hành động (Actionable Insights):
-  * Đề xuất chuyển đổi từ hợp đồng Month-to-month sang hợp đồng dài hạn (1-2 năm) bằng ưu đãi cước phí.
-  * Thiết lập hệ thống cảnh báo sớm (Early-warning system) khi khách hàng có chỉ số monthly_charges_ratio tăng cao để chủ động CSKH tư vấn gói cước tối ưu hơn.
+Trực quan hóa (EDA): Sử dụng seaborn và matplotlib kết hợp với dữ liệu truy vấn từ SQL để vẽ Bar Chart, Boxplot, Heatmap nhằm phân tích hành vi rời bỏ.
