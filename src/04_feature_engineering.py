@@ -1,3 +1,6 @@
+import pandas as pd
+import os
+import numpy as np
 def feature_engineering(df):
     """
     Hàm tạo các biến đặc trưng mới phục vụ mô hình dự đoán Churn.
@@ -30,13 +33,40 @@ def feature_engineering(df):
     return df_features
 
 # ==========================================
-# CÁCH TEST HÀM (Chạy trong Cell tiếp theo)
+# 2. XÁC ĐỊNH ĐƯỜNG DẪN TỚI FILE DATA (do data_extraction.py sinh ra)
 # ==========================================
-# Giả sử 'df' là biến bạn đã nạp từ file CSV trung gian ở Cell 1
-print("Đang tiến hành tạo các đặc trưng mới...")
+current_dir = os.path.dirname(os.path.abspath(__file__))
+# Lùi lại 1 thư mục (về thư mục gốc của project) rồi vào data/interim
+data_file = os.path.join(current_dir, "..", "data", "interim", "extracted_data.csv")
+
+# ==========================================
+# 3. ĐỌC FILE LÊN VÀ KIỂM TRA
+# ==========================================
+if os.path.exists(data_file):
+    print(f"⏳ Đang nạp dữ liệu từ: {data_file}...")
+    df = pd.read_csv(data_file)
+    print(f"Kích thước ban đầu (từ data_extraction.py): {df.shape}")
+else:
+    print(f"❌ Không tìm thấy file tại {data_file}. Chạy lại file data_extraction.py trước nhé.")
+    exit()
+
+# ==========================================
+# 4. CHẠY LOGIC TẠO 4 CỘT MỚI
+# ==========================================
+print("\n⚙️ Đang tiến hành tạo các đặc trưng mới...")
 df_engineered = feature_engineering(df)
 
-# In ra 5 dòng đầu tiên để kiểm tra kết quả của 4 biến vừa tạo
+# ==========================================
+# 5. GHI ĐÈ TRỰC TIẾP LẠI VÀO DATASET ĐÓ
+# ==========================================
+df_engineered.to_csv(data_file, index=False)
+
+print(f"\n✅ Đã thêm 4 cột mới và GHI ĐÈ thành công vào file cũ!")
+print(f"Kích thước bộ dữ liệu hiện tại: {df_engineered.shape}")
+
+# ==========================================
+# 6. KIỂM TRA KẾT QUẢ
+# ==========================================
 cols_to_check = ['tenure_group', 'service_diversity', 'monthly_charges_ratio', 'is_paperless_electronic']
-print("\n✅ Kết quả Feature Engineering:")
-display(df_engineered[cols_to_check].head())
+print("\n🔍 Xem trước các cột mới đã được gắn vào dataset:")
+print(df_engineered[cols_to_check].head())

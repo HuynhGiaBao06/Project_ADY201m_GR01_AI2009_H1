@@ -1,65 +1,145 @@
-# File: src/03_data_processing.py
+import os
 import pandas as pd
 import numpy as np
-from sklearn.base import BaseEstimator, TransformerMixin
-from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
+import joblib
 
-# =====================================================================
-# 1. CUSTOM CLASS XỬ LÝ OUTLIER BẰNG PHƯƠNG PHÁP IQR CAPPING
-# =====================================================================
-class OutlierCapper(BaseEstimator, TransformerMixin):
-    """
-    Class tự chế tuân thủ chuẩn Scikit-Learn.
-    Tìm biên dưới và biên trên bằng IQR, sau đó ép (cap) các giá trị vượt biên,
-    giúp giữ nguyên số dòng dữ liệu mà không làm lệch mô hình tuyến tính.
-    """
-    def __init__(self, variables=None):
-        self.variables = variables
+# BẮT BUỘC PHẢI CÓ DÒNG NÀY ĐỂ ĐỊNH NGHĨA CUSTOM CLASS:
+from sklearn.base import BaseEstimator, TransformerMixin
+from sklearn.pipeline import Pipeline
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import StandardScaler, FunctionTransformer
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import OneHotEncoder
+
+# ==========================================
+# 0. TỰ ĐỘNG XỬ LÝ ĐƯỜNG DẪN BẰNG THƯ VIỆN 'OS'
+# ==========================================
+# Xác định thư mục gốc của dự án (Project Root)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(current_dir)
+
+# Nối chuỗi đường dẫn tới thư mục data và file csv (interim chứa đủ 20 cột)
+DATA_PATH = os.path.join(BASE_DIR, 'data', 'interim' ,'extracted_data.csv') 
+
+print(f"📂 Đang tìm kiếm dữ liệu tại: {DATA_PATH}")
+
+try:
+    df = pd.read_csv(DATA_PATH)
+    print("✅ Đã nạp thành công dữ liệu vào DataFrame 'df'!")
+except FileNotFoundError:
+    # Phương án dự phòng
+    fallback_path = os.path.join('data', 'cleaned_data.csv')
+    try:
+        df = pd.read_csv(fallback_path)
+        print(f"✅ Đã tìm thấy dữ liệu tại đường dẫn tương đối '{fallback_path}'!")
+    except FileNotFoundError:
+        raise FileNotFoundError(
+            f"❌ Không tìm thấy file dữ liệu tại {DATA_PATH}. "
+            f"Hãy đảm bảo bạn đã đặt file data sạch vào thư mục."
+        )
+
+# ==========================================
+# 1. ĐỊNH NGHĨA CLASS OutlierCapperIQR
+# ==========================================
+class OutlierCapperIQR(BaseEstimator, TransformerMixin):
+    def __init__(self, factor=1.5):
+        self.factor = factor
         self.lower_bounds_ = {}
         self.upper_bounds_ = {}
 
     def fit(self, X, y=None):
-        # Tính toán Q1, Q3 và IQR cho từng cột số học trong tập Train
-        for var in self.variables:
-            Q1 = X[var].quantile(0.25)
-            Q3 = X[var].quantile(0.75)
+        X_df = pd.DataFrame(X)
+        # Lưu lại tên cột đầu vào theo chuẩn Sklearn
+        self.feature_names_in_ = X_df.columns.values 
+        
+        for col in X_df.columns:
+            Q1 = X_df[col].quantile(0.25)
+            Q3 = X_df[col].quantile(0.75)
             IQR = Q3 - Q1
-            self.lower_bounds_[var] = Q1 - 1.5 * IQR
-            self.upper_bounds_[var] = Q3 + 1.5 * IQR
+            self.lower_bounds_[col] = Q1 - self.factor * IQR
+            self.upper_bounds_[col] = Q3 + self.factor * IQR
         return self
 
     def transform(self, X):
-        # Tiến hành ép giá trị ngoại lai về biên (Capping)
-        X_capped = X.copy()
-        for var in self.variables:
-            X_capped[var] = np.where(X_capped[var] > self.upper_bounds_[var], self.upper_bounds_[var],
-                             np.where(X_capped[var] < self.lower_bounds_[var], self.lower_bounds_[var], X_capped[var]))
-        return X_capped
+        X_df = pd.DataFrame(X).copy()
+        for col in X_df.columns:
+            # Ép giá trị ngoại lai về các ngưỡng (Capping)
+            X_df[col] = np.clip(X_df[col], self.lower_bounds_[col], self.upper_bounds_[col])
+        return X_df
 
-# =====================================================================
-# 2. HÀM DỰNG BỘ TIỀN XỬ LÝ (PREPROCESSOR BUNDLE)
-# =====================================================================
-def get_logistic_preprocessor(num_cols, cat_cols):
-    """
-    Hàm đóng gói các bước tiền xử lý riêng cho mô hình Logistic Regression.
-    Bao gồm: Capping Outlier -> Scaling cho biến số -> OneHot Encoding cho biến chữ.
-    """
-    # Pipeline riêng cho cột số (Xử lý Outlier trước rồi mới Scale)
-    num_transformer = Pipeline(steps=[
-        ('capper', OutlierCapper(variables=num_cols)),
-        ('scaler', StandardScaler())
-    ])
-    
-    # Pipeline riêng cho cột chữ (Mã hóa One-Hot)
-    cat_transformer = Pipeline(steps=[
-        ('onehot', OneHotEncoder(handle_unknown='ignore', drop='first'))
-    ])
-    
-    # Gộp 2 luồng lại bằng ColumnTransformer
-    preprocessor = ColumnTransformer(transformers=[
-        ('num', num_transformer, num_cols),
-        ('cat', cat_transformer, cat_cols)
-    ], remainder='passthrough') # các biến đã xử lý ở Bước 5 (0/1) thì giữ nguyên
-    
-    return preprocessor
+    # 🚀 BẮT BUỘC THÊM HÀM NÀY ĐỂ TƯƠNG THÍCH VỚI set_output(transform="pandas")
+    def get_feature_names_out(self, input_features=None):
+        if input_features is not None:
+            return input_features
+        return self.feature_names_in_
+# ==========================================
+# 2. PHÂN TÁCH BIẾN X, Y VÀ CHIA TẬP TRAIN/TEST
+# ==========================================
+# Loại bỏ cột định danh 'ID' nếu có và cột mục tiêu 'Churn' để làm đặc trưng X
+id_col = 'ID' if 'ID' in df.columns else ('customerID' if 'customerID' in df.columns else None)
+
+if id_col:
+    X = df.drop(columns=[id_col, 'Churn'])
+else:
+    X = df.drop(columns=['Churn'])
+
+y = df['Churn']
+
+# Thực hiện tách tập Train/Test (80/20, Stratify theo y)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+
+print(f"📊 Kích thước tập huấn luyện (Train set): {X_train.shape}")
+print(f"📊 Kích thước tập kiểm thử (Test set)   : {X_test.shape}")
+
+# ==========================================
+# 3. XÂY DỰNG COLUMN TRANSFORMER (SUB-PIPELINE)
+# ==========================================
+iqr_cols = ['Tenure', 'MonthlyCharges']
+log_cols = ['TotalCharges']
+
+# Chọn các cột có kiểu 'object' (chữ) để One-Hot Encode (Dependents, PaymentMethod, InternetService, tenure_group)
+# Các cột int64/float64 còn lại sẽ tự động đi qua luồng passthrough
+cat_cols = X.select_dtypes(include=['object']).columns.tolist()
+
+feature_transforms = ColumnTransformer(
+    transformers=[
+        ('iqr_capper', OutlierCapperIQR(factor=1.5), iqr_cols),
+        ('log_transform', FunctionTransformer(np.log1p, validate=False), log_cols),
+        ('encoder', OneHotEncoder(drop='first', sparse_output=False, handle_unknown='ignore'), cat_cols)
+    ],
+    remainder='passthrough'
+)
+
+# 🚀 ÉP SKLEARN TRẢ VỀ DATAFRAME ĐỂ GIỮ NGUYÊN TÊN CỘT
+feature_transforms.set_output(transform="pandas")
+
+# Pipeline tổng quát
+preprocessing_pipeline = Pipeline(steps=[
+    ('feature_transforms', feature_transforms),
+    ('scaler', StandardScaler())
+])
+
+# 🚀 ÉP PIPELINE TRẢ VỀ DATAFRAME
+preprocessing_pipeline.set_output(transform="pandas")
+
+# FIT & TRANSFORM DỮ LIỆU LUÔN TẠI ĐÂY ĐỂ XUẤT RA CSV ĐÃ QUA XỬ LÝ
+X_train_processed = preprocessing_pipeline.fit_transform(X_train)
+X_test_processed = preprocessing_pipeline.transform(X_test)
+
+# ==========================================
+# 4. ĐÓNG GÓI PIPELINE VÀ DỮ LIỆU ĐỂ XUẤT FILE (BẰNG OS)
+# ==========================================
+artifacts_dir = os.path.join(BASE_DIR, 'artifacts')
+os.makedirs(artifacts_dir, exist_ok=True)
+
+# Xuất đối tượng Pipeline để sau này tái sử dụng
+joblib.dump(preprocessing_pipeline, os.path.join(artifacts_dir, 'preprocessing_pipeline.pkl'))
+
+# Xuất dữ liệu đã xử lý qua Pipeline ra file CSV
+X_train_processed.to_csv(os.path.join(artifacts_dir, 'X_train.csv'), index=False)
+X_test_processed.to_csv(os.path.join(artifacts_dir, 'X_test.csv'), index=False)
+y_train.to_csv(os.path.join(artifacts_dir, 'y_train.csv'), index=False)
+y_test.to_csv(os.path.join(artifacts_dir, 'y_test.csv'), index=False)
+
+print("\n💾 ĐÃ ĐÓNG GÓI VÀ XUẤT FILE THÀNH CÔNG!")
+print(f"📍 Toàn bộ tệp tin được lưu tại thư mục: {artifacts_dir}")
