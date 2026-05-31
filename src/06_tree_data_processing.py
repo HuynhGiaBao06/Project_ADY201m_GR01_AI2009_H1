@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import OrdinalEncoder # Đã đổi từ OneHotEncoder sang OrdinalEncoder
 from sklearn.model_selection import train_test_split
 
 # ==========================================
@@ -34,31 +34,35 @@ X = df.drop(columns=[id_col, 'Churn']) if id_col else df.drop(columns=['Churn'])
 y = df['Churn']
 
 # ==========================================
-# 2. XÂY DỰNG PIPELINE VÀ ENCODE TOÀN BỘ DỮ LIỆU TRƯỚC
+# 2. CHIA TẬP TRAIN/TEST (CHUYỂN LÊN TRƯỚC ĐỂ TRÁNH DATA LEAKAGE)
 # ==========================================
-cat_cols = X.select_dtypes(include=['object']).columns.tolist()
+# CỰC KỲ QUAN TRỌNG: Phải chia dữ liệu thô trước khi đưa vào Pipeline
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42, stratify=y
+)
+
+# ==========================================
+# 3. XÂY DỰNG PIPELINE VÀ ENCODE DỮ LIỆU
+# ==========================================
+# Lấy danh sách cột object từ tập Train để đảm bảo tính nhất quán
+cat_cols = X_train.select_dtypes(include=['object']).columns.tolist()
 
 feature_transforms = ColumnTransformer(
     transformers=[
-        ('encoder', OneHotEncoder(drop='first', sparse_output=False, handle_unknown='ignore'), cat_cols)
+        # Sử dụng OrdinalEncoder với cấu hình handle_unknown để xử lý giá trị lạ trong tập Test
+        ('encoder', OrdinalEncoder(handle_unknown='use_encoded_value', unknown_value=-1), cat_cols)
     ],
-    remainder='passthrough'
+    remainder='passthrough' # Giữ nguyên Outliers và các biến số học, không Scaling
 ).set_output(transform="pandas")
 
 preprocessing_pipeline = Pipeline(steps=[
     ('feature_transforms', feature_transforms)
 ])
 
-# THỰC HIỆN ENCODE TRÊN TOÀN BỘ TẬP X
-print("🔄 Đang tiến hành One-Hot Encoding trên toàn bộ dữ liệu...")
-X_encoded = preprocessing_pipeline.fit_transform(X)
-
-# ==========================================
-# 3. CHIA TẬP TRAIN/TEST (TỪ DỮ LIỆU ĐÃ ENCODE)
-# ==========================================
-X_train, X_test, y_train, y_test = train_test_split(
-    X_encoded, y, test_size=0.2, random_state=42, stratify=y
-)
+# THỰC HIỆN ENCODE (FIT TRÊN TRAIN, TRANSFORM TRÊN CẢ TRAIN VÀ TEST)
+print("🔄 Đang tiến hành Ordinal Encoding (Tránh Data Leakage)...")
+X_train_encoded = preprocessing_pipeline.fit_transform(X_train)
+X_test_encoded = preprocessing_pipeline.transform(X_test)
 
 # ==========================================
 # 4. ĐÓNG GÓI PIPELINE VÀ DỮ LIỆU ĐÃ XỬ LÝ
@@ -66,13 +70,13 @@ X_train, X_test, y_train, y_test = train_test_split(
 artifacts_dir = os.path.join(BASE_DIR, 'artifacts')
 os.makedirs(artifacts_dir, exist_ok=True)
 
-# Lưu pipeline đã fit
+# Lưu pipeline đã fit (Lúc này Pipeline đã học được các Categories từ tập Train)
 joblib.dump(preprocessing_pipeline, os.path.join(artifacts_dir, 'tree_preprocessing_pipeline.pkl'))
 
-# Lưu tập dữ liệu đã chia (lúc này X_train và X_test ĐÃ LÀ SỐ HOÀN TOÀN)
-X_train.to_csv(os.path.join(artifacts_dir, 'X_train.csv'), index=False)
-X_test.to_csv(os.path.join(artifacts_dir, 'X_test.csv'), index=False)
-y_train.to_csv(os.path.join(artifacts_dir, 'y_train.csv'), index=False)
-y_test.to_csv(os.path.join(artifacts_dir, 'y_test.csv'), index=False)
+# Lưu tập dữ liệu đã chia (lúc này X_train_tree và X_test_tree ĐÃ LÀ SỐ HOÀN TOÀN và KHÔNG RÒ RỈ)
+X_train_encoded.to_csv(os.path.join(artifacts_dir, 'X_train_tree.csv'), index=False)
+X_test_encoded.to_csv(os.path.join(artifacts_dir, 'X_test_tree.csv'), index=False)
+y_train.to_csv(os.path.join(artifacts_dir, 'y_train_tree.csv'), index=False)
+y_test.to_csv(os.path.join(artifacts_dir, 'y_test_tree.csv'), index=False)
 
 print("\n💾 Đã đóng gói pipeline và lưu dữ liệu Train/Test (đã encoded) thành công.")
