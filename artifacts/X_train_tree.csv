@@ -1,4 +1,4 @@
-ordinal_encoder__Dependents,ordinal_encoder__PaymentMethod,ordinal_encoder__InternetService,ordinal_encoder__tenure_group,remainder__SeniorCitizen,remainder__Partner,remainder__Tenure,remainder__Contract,remainder__PaperlessBilling,remainder__MonthlyCharges,remainder__TotalCharges,remainder__OnlineSecurity,remainder__OnlineBackup,remainder__DeviceProtection,remainder__TechSupport,remainder__service_diversity,remainder__monthly_charges_ratio,remainder__is_paperless_electronic
+encoder__Dependents,encoder__PaymentMethod,encoder__InternetService,encoder__tenure_group,remainder__SeniorCitizen,remainder__Partner,remainder__Tenure,remainder__Contract,remainder__PaperlessBilling,remainder__MonthlyCharges,remainder__TotalCharges,remainder__OnlineSecurity,remainder__OnlineBackup,remainder__DeviceProtection,remainder__TechSupport,remainder__service_diversity,remainder__monthly_charges_ratio,remainder__is_paperless_electronic
 0.0,1.0,1.0,4.0,0,1,60,1,1,94.1,5475.9,1,1,0,0,2,1.4530194691445124,1
 1.0,0.0,2.0,0.0,0,0,12,24,0,19.35,212.3,0,0,0,0,0,0.2987877441864646,0
 0.0,2.0,1.0,0.0,0,0,2,1,1,80.45,137.1,1,0,1,0,2,1.2422467193695648,0
