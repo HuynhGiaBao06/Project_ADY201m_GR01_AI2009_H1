@@ -223,6 +223,7 @@ __marimo__/
 
 # 1. Chặn toàn bộ thư mục dữ liệu (Tuyệt đối không push data lên Git)
 data/
+*.csv
 *.tsv
 *.xlsx
 *.xls
