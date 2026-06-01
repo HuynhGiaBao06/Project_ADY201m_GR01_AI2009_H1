@@ -235,6 +235,8 @@ models/
 *.joblib
 *.h5
 *.sav
+!artifacts/preprocessing_pipeline.pkl
+
 
 # 3. Chặn các file Dashboard PowerBI / Tableau (nếu có lưu cục bộ)
 *.pbix
