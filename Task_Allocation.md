@@ -30,7 +30,7 @@ Thời gian thực hiện: 18/05/2026 – 14/06/2026
 * Task 3 (SQL): Viết truy vấn SQL kiểm tra chất lượng dữ liệu sau khi import (`sql/data_quality_checks.sql`).
 
 **3. Nguyễn Hữu Kiệt**
-* Task 1 (Python): Sử dụng `pandas.groupby()` để khám phá nhanh hành vi tiêu dùng, số tháng gắn bó (Tenure) và cước phí.
+* Task 1 (Python): Xây dựng luồng kết nối SQL - Python nhằm đáp ứng yêu cầu kỹ thuật của data pipeline.
 * Task 2 (SQL): Viết truy vấn SQL tính Churn Rate (`sql/churn_rate_by_segment.sql`) theo Loại hợp đồng, Phương thức thanh toán, và các gói dịch vụ đi kèm.
 
 ---
