@@ -42,6 +42,20 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 # ==========================================
+# 🚀 XỬ LÝ FIX DATA LEAKAGE: TẠO CỘT MỚI TẠI ĐÂY
+# ==========================================
+# Copy để tránh lỗi SettingWithCopyWarning của Pandas
+X_train = X_train.copy()
+X_test = X_test.copy()
+
+# Tính trung bình MonthlyCharges CHỈ TRÊN TẬP TRAIN
+mean_charges_train = X_train['MonthlyCharges'].mean()
+
+# Tạo cột tỷ lệ cho cả Train và Test bằng mean của Train
+X_train['monthly_charges_ratio'] = X_train['MonthlyCharges'] / mean_charges_train
+X_test['monthly_charges_ratio'] = X_test['MonthlyCharges'] / mean_charges_train
+
+# ==========================================
 # 3. XÂY DỰNG PIPELINE VÀ ENCODE DỮ LIỆU
 # ==========================================
 # Lấy danh sách cột object từ tập Train để đảm bảo tính nhất quán

@@ -18,7 +18,7 @@ from sklearn.preprocessing import OneHotEncoder
 current_dir = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(current_dir)
 
-# Nối chuỗi đường dẫn tới thư mục data và file csv (interim chứa đủ 20 cột)
+# Nối chuỗi đường dẫn tới thư mục data và file csv (interim chứa đủ 19 cột)
 DATA_PATH = os.path.join(BASE_DIR, 'data', 'interim' ,'extracted_data.csv') 
 
 print(f"📂 Đang tìm kiếm dữ liệu tại: {DATA_PATH}")
@@ -90,6 +90,20 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 print(f"📊 Kích thước tập huấn luyện (Train set): {X_train.shape}")
 print(f"📊 Kích thước tập kiểm thử (Test set)   : {X_test.shape}")
+
+# ==========================================
+# 🚀 XỬ LÝ FIX DATA LEAKAGE: TẠO CỘT MỚI TẠI ĐÂY
+# ==========================================
+# Copy để tránh lỗi SettingWithCopyWarning của Pandas
+X_train = X_train.copy()
+X_test = X_test.copy()
+
+# Tính trung bình MonthlyCharges CHỈ TRÊN TẬP TRAIN
+mean_charges_train = X_train['MonthlyCharges'].mean()
+
+# Tạo cột tỷ lệ cho cả Train và Test bằng mean của Train
+X_train['monthly_charges_ratio'] = X_train['MonthlyCharges'] / mean_charges_train
+X_test['monthly_charges_ratio'] = X_test['MonthlyCharges'] / mean_charges_train
 
 # ==========================================
 # 3. XÂY DỰNG COLUMN TRANSFORMER (SUB-PIPELINE)

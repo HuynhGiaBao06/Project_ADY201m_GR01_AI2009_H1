@@ -20,9 +20,7 @@ def feature_engineering(df):
     # Ép kiểu astype(int) đảm bảo an toàn nếu SQL trả về True/False (kiểu BIT)
     df_features['service_diversity'] = df_features[services_cols].astype(int).sum(axis=1)
 
-    # 4. monthly_charges_ratio: Tỷ lệ chi phí tháng so với mức trung bình
-    mean_monthly_charges = df_features['MonthlyCharges'].mean()
-    df_features['monthly_charges_ratio'] = df_features['MonthlyCharges'] / mean_monthly_charges
+    # 4. monthly_charges_ratio: Tỷ lệ chi phí tháng so với mức trung bình(Được tạo ở data processing, tránh data lackage [Đang bị lỗi kiến trúc dự án])
 
     # 5. is_paperless_electronic: Tổ hợp hóa đơn điện tử và thanh toán tự động
     # Ép kiểu sang int để đồng nhất cách so sánh
@@ -51,7 +49,7 @@ else:
     exit()
 
 # ==========================================
-# 4. CHẠY LOGIC TẠO 4 CỘT MỚI
+# 4. CHẠY LOGIC TẠO 3 CỘT MỚI
 # ==========================================
 print("\n⚙️ Đang tiến hành tạo các đặc trưng mới...")
 df_engineered = feature_engineering(df)
@@ -61,12 +59,12 @@ df_engineered = feature_engineering(df)
 # ==========================================
 df_engineered.to_csv(data_file, index=False)
 
-print(f"\n✅ Đã thêm 4 cột mới và GHI ĐÈ thành công vào file cũ!")
+print(f"\n✅ Đã thêm 3 cột mới và GHI ĐÈ thành công vào file cũ!")
 print(f"Kích thước bộ dữ liệu hiện tại: {df_engineered.shape}")
 
 # ==========================================
 # 6. KIỂM TRA KẾT QUẢ
 # ==========================================
-cols_to_check = ['tenure_group', 'service_diversity', 'monthly_charges_ratio', 'is_paperless_electronic']
+cols_to_check = ['tenure_group', 'service_diversity' , 'is_paperless_electronic']
 print("\n🔍 Xem trước các cột mới đã được gắn vào dataset:")
 print(df_engineered[cols_to_check].head())
