@@ -1,0 +1,5 @@
+feature_code,feature_display_name,category_code,category_display_name,count,churn_count,churn_rate,churn_rate_pct
+PaymentMethod,Payment Method,Electronic check,Electronic check,2365,1071,0.4528541226215645,45.29
+PaymentMethod,Payment Method,Mailed check,Mailed check,1612,308,0.19106699751861042,19.11
+PaymentMethod,Payment Method,Bank transfer (automatic),Bank transfer automatic,1544,258,0.16709844559585493,16.71
+PaymentMethod,Payment Method,Credit card (automatic),Credit card automatic,1522,232,0.15243101182654403,15.24

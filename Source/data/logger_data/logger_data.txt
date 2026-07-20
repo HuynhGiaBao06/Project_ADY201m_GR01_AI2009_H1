@@ -1,0 +1,645 @@
+2026-07-07 15:38:11,272 - DataUploader - [INFO] - Reading data file from: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\raw_data\data_raw.csv...
+2026-07-07 15:38:11,303 - DataUploader - [INFO] - Successfully loaded 7043 rows of data into Pandas DataFrame.
+2026-07-07 15:38:11,303 - DataUploader - [INFO] - Starting to push data to DB table 'db_predictive_churn'...
+2026-07-07 15:38:11,304 - NeonDBManager - [INFO] - Pushing 7043 rows to table 'db_predictive_churn'...
+2026-07-07 15:38:14,609 - NeonDBManager - [INFO] - Successfully pushed data to table 'db_predictive_churn'.
+2026-07-07 15:38:14,610 - DataUploader - [INFO] - SUCCESS: Data successfully uploaded to DB. Target table: 'db_predictive_churn'.
+2026-07-07 16:02:40,439 - DataUploader - [INFO] - Reading data file from: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\raw_data\data_raw.csv...
+2026-07-07 16:02:40,464 - DataUploader - [INFO] - Successfully loaded 7043 rows of data into Pandas DataFrame.
+2026-07-07 16:02:40,465 - DataUploader - [INFO] - Starting to push data to DB table 'db_predictive_churn'...
+2026-07-07 16:02:40,465 - NeonDBManager - [INFO] - Pushing 7043 rows to table 'db_predictive_churn'...
+2026-07-07 16:02:43,487 - NeonDBManager - [INFO] - Successfully pushed data to table 'db_predictive_churn'.
+2026-07-07 16:02:43,487 - DataUploader - [INFO] - SUCCESS: Data successfully uploaded to DB. Target table: 'db_predictive_churn'.
+2026-07-07 16:06:33,434 - DataUploader - [INFO] - Reading data file from: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\raw_data\data_raw.csv...
+2026-07-07 16:06:33,447 - DataUploader - [INFO] - Successfully loaded 7043 rows of data into Pandas DataFrame.
+2026-07-07 16:06:33,447 - DataUploader - [INFO] - Starting to push data to DB table 'db_predictive_churn'...
+2026-07-07 16:06:33,447 - NeonDBManager - [INFO] - Pushing 7043 rows to table 'db_predictive_churn'...
+2026-07-07 16:06:35,446 - NeonDBManager - [INFO] - Successfully pushed data to table 'db_predictive_churn'.
+2026-07-07 16:06:35,446 - DataUploader - [INFO] - SUCCESS: Data successfully uploaded to DB. Target table: 'db_predictive_churn'.
+2026-07-07 16:31:22,381 - DataUploader - [INFO] - Reading data file from: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\raw_data\data_raw.csv...
+2026-07-07 16:31:22,395 - DataUploader - [INFO] - Successfully loaded 7043 rows of data into Pandas DataFrame.
+2026-07-07 16:31:22,395 - DataUploader - [INFO] - Starting to push data to DB table 'db_predictive_churn'...
+2026-07-07 16:31:22,395 - NeonDBManager - [INFO] - Pushing 7043 rows to table 'db_predictive_churn'...
+2026-07-07 16:31:24,210 - NeonDBManager - [INFO] - Successfully pushed data to table 'db_predictive_churn'.
+2026-07-07 16:31:24,211 - DataUploader - [INFO] - SUCCESS: Data successfully uploaded to DB. Target table: 'db_predictive_churn'.
+2026-07-07 16:31:49,675 - DataIngestion - [INFO] - Fetching churn data from view 'vw_cleaning_data'.
+2026-07-07 16:31:49,719 - NeonDBManager - [INFO] - Loading data from database...
+2026-07-07 16:31:50,693 - NeonDBManager - [INFO] - Successfully loaded 7043 rows of data.
+2026-07-07 16:31:50,700 - DataIngestion - [INFO] - Selected base churn columns: ['ID', 'Churn', 'SeniorCitizen', 'Partner', 'Dependents', 'Tenure', 'Contract', 'PaymentMethod', 'PaperlessBilling', 'MonthlyCharges', 'TotalCharges', 'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport']
+2026-07-07 16:31:50,700 - DataIngestion - [INFO] - Base churn dataset shape after column selection: (7043, 16)
+2026-07-07 16:31:50,748 - DataIngestion - [INFO] - Successfully saved churn checkpoint splits.
+2026-07-07 16:31:50,749 - DataIngestion - [INFO] - Train set: (4930, 16) -> train_df.csv
+2026-07-07 16:31:50,749 - DataIngestion - [INFO] - Validation set: (1056, 16) -> validation_df.csv
+2026-07-07 16:31:50,749 - DataIngestion - [INFO] - Test set: (1057, 16) -> test_df.csv - LOCKED
+2026-07-07 18:57:04,379 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-07 18:57:04,379 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-07 18:57:04,379 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-07 18:57:04,379 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-07 18:57:04,380 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-07 18:57:04,380 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-07 18:57:04,396 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-07 18:57:04,396 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-07 18:57:04,396 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-07 18:57:04,543 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-07 18:57:04,543 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-07 18:57:04,543 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-07 18:57:04,543 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-07 18:57:04,543 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-07 18:57:04,543 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-07 18:57:04,543 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-07 18:57:04,543 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-08 11:54:37,778 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-08 11:54:37,779 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-08 11:54:37,780 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-08 11:54:37,780 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-08 11:54:37,781 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-08 11:54:37,781 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-08 11:54:37,795 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-08 11:54:37,795 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-08 11:54:37,796 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-08 11:54:37,948 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-08 11:54:37,949 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-08 11:54:37,949 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-08 11:54:37,950 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-08 11:54:37,950 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-08 11:54:37,950 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-08 11:54:37,951 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-08 11:54:37,951 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-08 11:59:35,909 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-08 11:59:35,914 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-08 11:59:35,915 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-08 11:59:35,915 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-08 11:59:35,916 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-08 11:59:35,917 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-08 11:59:35,931 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-08 11:59:35,932 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-08 11:59:35,933 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-08 11:59:36,121 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-08 11:59:36,121 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-08 11:59:36,121 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-08 11:59:36,125 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-08 11:59:36,125 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-08 11:59:36,127 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-08 11:59:36,127 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-08 11:59:36,127 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-08 12:25:32,195 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-08 12:25:32,195 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-08 12:25:32,196 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-08 12:25:32,196 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-08 12:25:32,196 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-08 12:25:32,197 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-08 12:25:32,210 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-08 12:25:32,211 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-08 12:25:32,211 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-08 12:25:32,354 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-08 12:25:32,354 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-08 12:25:32,355 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-08 12:25:32,355 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-08 12:25:32,355 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-08 12:25:32,356 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-08 12:25:32,357 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-08 12:25:32,357 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-08 13:25:30,654 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-08 13:25:30,654 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-08 13:25:30,655 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-08 13:25:30,655 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-08 13:25:30,656 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-08 13:25:30,656 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-08 13:25:30,669 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-08 13:25:30,669 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-08 13:25:30,670 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-08 13:25:30,813 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-08 13:25:30,814 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-08 13:25:30,814 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-08 13:25:30,815 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-08 13:25:30,815 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-08 13:25:30,815 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-08 13:25:30,816 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-08 13:25:30,818 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-08 13:26:44,861 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-08 13:26:44,861 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-08 13:26:44,861 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-08 13:26:44,861 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-08 13:26:44,861 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-08 13:26:44,861 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-08 13:26:44,875 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-08 13:26:44,875 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-08 13:26:44,875 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-08 13:26:45,020 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-08 13:26:45,020 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-08 13:26:45,020 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-08 13:26:45,020 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-08 13:26:45,020 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-08 13:26:45,020 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-08 13:26:45,020 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-08 13:26:45,020 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-08 14:08:11,441 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-08 14:08:11,441 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-08 14:08:11,441 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-08 14:08:11,442 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-08 14:08:11,443 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-08 14:08:11,444 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-08 14:08:11,457 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-08 14:08:11,458 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-08 14:08:11,458 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-08 14:08:11,605 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-08 14:08:11,606 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-08 14:08:11,607 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-08 14:08:11,607 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-08 14:08:11,607 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-08 14:08:11,608 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-08 14:08:11,608 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-08 14:08:11,608 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-08 14:25:34,475 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-08 14:25:34,476 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-08 14:25:34,477 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-08 14:25:34,478 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-08 14:25:34,479 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-08 14:25:34,480 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-08 14:25:34,496 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-08 14:25:34,497 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-08 14:25:34,498 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-08 14:25:34,706 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-08 14:25:34,707 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-08 14:25:34,707 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-08 14:25:34,709 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-08 14:25:34,709 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-08 14:25:34,710 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-08 14:25:34,711 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-08 14:25:34,712 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-08 14:26:18,030 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-08 14:26:18,030 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-08 14:26:18,031 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-08 14:26:18,031 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-08 14:26:18,032 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-08 14:26:18,033 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-08 14:26:18,048 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-08 14:26:18,049 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-08 14:26:18,050 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-08 14:26:18,232 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-08 14:26:18,233 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-08 14:26:18,234 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-08 14:26:18,234 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-08 14:26:18,235 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-08 14:26:18,236 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-08 14:26:18,238 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-08 14:26:18,239 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-08 14:40:16,780 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-08 14:40:16,780 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-08 14:40:16,781 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-08 14:40:16,781 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-08 14:40:16,782 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-08 14:40:16,783 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-08 14:40:16,795 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-08 14:40:16,796 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-08 14:40:16,796 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-08 14:40:16,945 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-08 14:40:16,946 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-08 14:40:16,946 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-08 14:40:16,946 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-08 14:40:16,947 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-08 14:40:16,947 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-08 14:40:16,948 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-08 14:40:16,948 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-08 14:41:10,789 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-08 14:41:10,790 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-08 14:41:10,790 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-08 14:41:10,791 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-08 14:41:10,791 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-08 14:41:10,792 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-08 14:41:10,803 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-08 14:41:10,804 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-08 14:41:10,804 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-08 14:41:10,951 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-08 14:41:10,952 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-08 14:41:10,952 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-08 14:41:10,953 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-08 14:41:10,953 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-08 14:41:10,953 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-08 14:41:10,954 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-08 14:41:10,954 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-08 14:43:32,792 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-08 14:43:32,793 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-08 14:43:32,794 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-08 14:43:32,795 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-08 14:43:32,796 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-08 14:43:32,797 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-08 14:43:32,814 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-08 14:43:32,815 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-08 14:43:32,816 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-08 14:43:33,015 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-08 14:43:33,015 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-08 14:43:33,016 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-08 14:43:33,018 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-08 14:43:33,019 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-08 14:43:33,021 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-08 14:43:33,022 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-08 14:43:33,023 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 12:13:58,009 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 12:13:58,010 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 12:13:58,010 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 12:13:58,011 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 12:13:58,011 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 12:13:58,012 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 12:13:58,043 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 12:13:58,044 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 12:13:58,045 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 12:13:58,283 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 12:13:58,284 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 12:13:58,285 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 12:13:58,286 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 12:13:58,286 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 12:13:58,287 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 12:13:58,288 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 12:13:58,289 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 12:17:31,260 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 12:17:31,260 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 12:17:31,261 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 12:17:31,261 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 12:17:31,261 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 12:17:31,262 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 12:17:31,277 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 12:17:31,277 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 12:17:31,278 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 12:17:31,438 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 12:17:31,440 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 12:17:31,441 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 12:17:31,441 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 12:17:31,441 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 12:17:31,441 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 12:17:31,442 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 12:17:31,442 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 12:24:24,381 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 12:24:24,382 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 12:24:24,383 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 12:24:24,384 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 12:24:24,384 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 12:24:24,385 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 12:24:24,407 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 12:24:24,408 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 12:24:24,408 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 12:24:24,626 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 12:24:24,626 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 12:24:24,626 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 12:24:24,630 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 12:24:24,630 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 12:24:24,630 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 12:24:24,630 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 12:24:24,630 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 12:27:16,942 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 12:27:16,943 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 12:27:16,944 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 12:27:16,946 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 12:27:16,947 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 12:27:16,948 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 12:27:16,968 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 12:27:16,969 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 12:27:16,970 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 12:27:17,279 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 12:27:17,281 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 12:27:17,282 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 12:27:17,284 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 12:27:17,286 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 12:27:17,287 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 12:27:17,288 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 12:27:17,290 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 13:21:57,749 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 13:21:57,750 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 13:21:57,751 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 13:21:57,752 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 13:21:57,752 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 13:21:57,753 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 13:21:57,777 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 13:21:57,779 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 13:21:57,780 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 13:21:58,078 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 13:21:58,079 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 13:21:58,080 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 13:21:58,080 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 13:21:58,081 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 13:21:58,082 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 13:21:58,082 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 13:21:58,084 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 13:26:10,971 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 13:26:10,971 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 13:26:10,972 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 13:26:10,972 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 13:26:10,973 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 13:26:10,974 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 13:26:10,988 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 13:26:10,989 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 13:26:10,990 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 13:26:11,158 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 13:26:11,159 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 13:26:11,159 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 13:26:11,159 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 13:26:11,160 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 13:26:11,160 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 13:26:11,161 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 13:26:11,162 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 13:35:33,596 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 13:35:33,597 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 13:35:33,597 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 13:35:33,599 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 13:35:33,601 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 13:35:33,602 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 13:35:33,616 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 13:35:33,617 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 13:35:33,618 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 13:35:33,800 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 13:35:33,800 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 13:35:33,800 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 13:35:33,800 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 13:35:33,800 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 13:35:33,800 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 13:35:33,800 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 13:35:33,810 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 13:36:23,879 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 13:36:23,880 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 13:36:23,881 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 13:36:23,881 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 13:36:23,881 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 13:36:23,884 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 13:36:23,897 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 13:36:23,898 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 13:36:23,899 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 13:36:24,077 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 13:36:24,080 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 13:36:24,080 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 13:36:24,080 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 13:36:24,082 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 13:36:24,082 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 13:36:24,082 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 13:36:24,082 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 13:36:38,682 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 13:36:38,682 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 13:36:38,682 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 13:36:38,686 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 13:36:38,686 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 13:36:38,691 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 13:36:38,706 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 13:36:38,707 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 13:36:38,708 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 13:36:38,882 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 13:36:38,882 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 13:36:38,882 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 13:36:38,882 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 13:36:38,885 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 13:36:38,885 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 13:36:38,887 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 13:36:38,888 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 13:36:50,825 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 13:36:50,827 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 13:36:50,827 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 13:36:50,829 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 13:36:50,831 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 13:36:50,833 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 13:36:50,850 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 13:36:50,852 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 13:36:50,853 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 13:36:51,084 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 13:36:51,084 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 13:36:51,084 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 13:36:51,084 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 13:36:51,084 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 13:36:51,084 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 13:36:51,090 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 13:36:51,090 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 16:43:29,809 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 16:43:29,809 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 16:43:29,809 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 16:43:29,810 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 16:43:29,810 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 16:43:29,810 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 16:43:29,826 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 16:43:29,826 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 16:43:29,826 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 16:43:29,995 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 16:43:29,996 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 16:43:29,996 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 16:43:29,996 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 16:43:29,996 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 16:43:29,996 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 16:43:29,996 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 16:43:29,996 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 16:48:30,952 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 16:48:30,953 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 16:48:30,953 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 16:48:30,954 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 16:48:30,954 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 16:48:30,955 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 16:48:30,969 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 16:48:30,970 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 16:48:30,971 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 16:48:31,133 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 16:48:31,133 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 16:48:31,134 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 16:48:31,134 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 16:48:31,134 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 16:48:31,134 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 16:48:31,135 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 16:48:31,135 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 16:48:48,120 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 16:48:48,121 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 16:48:48,121 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 16:48:48,121 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 16:48:48,121 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 16:48:48,122 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 16:48:48,135 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 16:48:48,136 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 16:48:48,136 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 16:48:48,284 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 16:48:48,285 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 16:48:48,286 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 16:48:48,286 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 16:48:48,286 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 16:48:48,287 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 16:48:48,287 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 16:48:48,287 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 16:49:05,958 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 16:49:05,959 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 16:49:05,959 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 16:49:05,959 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 16:49:05,960 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 16:49:05,960 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 16:49:05,973 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 16:49:05,974 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 16:49:05,974 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 16:49:06,131 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 16:49:06,132 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 16:49:06,133 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 16:49:06,133 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 16:49:06,134 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 16:49:06,134 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 16:49:06,135 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 16:49:06,135 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 16:49:47,311 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 16:49:47,311 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 16:49:47,313 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 16:49:47,314 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 16:49:47,315 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 16:49:47,317 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 16:49:47,337 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 16:49:47,338 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 16:49:47,339 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 16:49:47,632 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 16:49:47,633 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 16:49:47,634 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 16:49:47,635 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 16:49:47,635 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 16:49:47,636 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 16:49:47,637 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 16:49:47,638 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 16:54:27,997 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 16:54:28,000 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 16:54:28,001 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 16:54:28,003 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 16:54:28,005 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 16:54:28,006 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 16:54:28,058 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 16:54:28,058 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 16:54:28,058 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 16:54:28,312 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 16:54:28,314 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 16:54:28,315 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 16:54:28,316 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 16:54:28,316 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 16:54:28,316 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 16:54:28,316 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 16:54:28,316 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 16:54:40,044 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 16:54:40,046 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 16:54:40,047 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 16:54:40,048 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 16:54:40,048 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 16:54:40,049 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 16:54:40,063 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 16:54:40,065 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 16:54:40,066 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 16:54:40,249 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 16:54:40,250 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 16:54:40,251 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 16:54:40,252 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 16:54:40,253 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 16:54:40,253 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 16:54:40,254 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 16:54:40,255 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 16:54:55,194 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 16:54:55,195 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 16:54:55,196 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 16:54:55,197 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 16:54:55,199 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 16:54:55,200 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 16:54:55,229 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 16:54:55,230 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 16:54:55,231 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 16:54:55,454 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 16:54:55,454 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 16:54:55,454 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 16:54:55,454 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 16:54:55,454 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 16:54:55,454 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 16:54:55,454 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 16:54:55,454 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 16:55:06,663 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 16:55:06,665 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 16:55:06,667 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 16:55:06,668 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 16:55:06,668 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 16:55:06,668 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 16:55:06,686 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 16:55:06,687 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 16:55:06,688 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 16:55:06,872 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 16:55:06,873 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 16:55:06,874 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 16:55:06,874 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 16:55:06,874 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 16:55:06,874 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 16:55:06,874 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 16:55:06,874 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 17:06:39,563 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 17:06:39,563 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 17:06:39,563 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 17:06:39,563 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 17:06:39,563 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 17:06:39,563 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 17:06:39,576 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 17:06:39,576 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 17:06:39,576 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 17:06:39,720 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 17:06:39,720 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 17:06:39,720 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 17:06:39,720 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 17:06:39,720 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 17:06:39,720 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 17:06:39,720 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 17:06:39,720 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 17:27:51,281 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 17:27:51,281 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 17:27:51,281 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 17:27:51,283 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 17:27:51,283 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 17:27:51,285 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 17:27:51,301 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 17:27:51,302 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 17:27:51,303 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 17:27:51,519 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 17:27:51,520 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 17:27:51,520 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 17:27:51,521 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 17:27:51,521 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 17:27:51,523 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 17:27:51,524 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 17:27:51,526 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 17:49:23,029 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 17:49:23,030 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 17:49:23,031 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 17:49:23,031 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 17:49:23,032 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 17:49:23,033 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 17:49:23,050 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 17:49:23,051 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 17:49:23,052 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 17:49:23,360 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 17:49:23,361 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 17:49:23,362 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 17:49:23,363 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 17:49:23,364 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 17:49:23,365 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 17:49:23,366 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 17:49:23,367 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 17:54:39,733 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 17:54:39,733 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 17:54:39,733 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 17:54:39,733 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 17:54:39,733 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 17:54:39,733 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 17:54:39,752 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 17:54:39,752 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 17:54:39,752 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 17:54:39,931 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 17:54:39,931 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 17:54:39,931 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 17:54:39,934 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 17:54:39,934 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 17:54:39,934 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 17:54:39,934 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 17:54:39,934 - main - [INFO] - Refactored churn pipeline orchestration finished.
+2026-07-13 18:01:23,351 - main - [INFO] - Refactored churn pipeline orchestration started.
+2026-07-13 18:01:23,351 - main - [INFO] - Run options: force_ingestion=False, use_database=False, view_name=None
+2026-07-13 18:01:23,351 - main - [INFO] - Train checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\train_df.csv
+2026-07-13 18:01:23,351 - main - [INFO] - Validation checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\validation_df.csv
+2026-07-13 18:01:23,351 - main - [INFO] - Test checkpoint path: D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\checkpoint_data\test_df.csv
+2026-07-13 18:01:23,351 - main - [INFO] - All checkpoint files exist; ingestion skipped.
+2026-07-13 18:01:23,372 - main - [INFO] - Loaded train checkpoint shape: (4930, 16)
+2026-07-13 18:01:23,372 - main - [INFO] - Loaded validation checkpoint shape: (1056, 16)
+2026-07-13 18:01:23,372 - main - [INFO] - Loaded test checkpoint shape: (1057, 16)
+2026-07-13 18:01:23,546 - main - [INFO] - Logistic train output shape: (4930, 28)
+2026-07-13 18:01:23,548 - main - [INFO] - Logistic validation output shape: (1056, 28)
+2026-07-13 18:01:23,550 - main - [INFO] - Logistic test output shape: (1057, 28)
+2026-07-13 18:01:23,550 - main - [INFO] - Tree train output shape: (4930, 20)
+2026-07-13 18:01:23,551 - main - [INFO] - Tree validation output shape: (1056, 20)
+2026-07-13 18:01:23,551 - main - [INFO] - Tree test output shape: (1057, 20)
+2026-07-13 18:01:23,551 - main - [INFO] - Preprocessing branch orchestration completed.
+2026-07-13 18:01:23,551 - main - [INFO] - Refactored churn pipeline orchestration finished.

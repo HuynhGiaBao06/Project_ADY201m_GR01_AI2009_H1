@@ -1,0 +1,19 @@
+Feature_Code,Feature_Display_Name,Base_Feature,Base_Feature_Display_Name,Encoded_Category,Encoded_Category_Display_Name,Feature_Group,Feature_Type,Is_Encoded,Used_For_SHAP,Explained_Class,SHAP_Output_Scale
+SeniorCitizen,Senior Citizen,SeniorCitizen,Senior Citizen,,,Customer Profile,Binary,False,True,Churn = 1,raw model margin / log-odds
+Partner,Partner,Partner,Partner,,,Customer Profile,Binary,False,True,Churn = 1,raw model margin / log-odds
+Dependents,Dependents,Dependents,Dependents,,,Customer Profile,Binary,False,True,Churn = 1,raw model margin / log-odds
+Tenure,Tenure (Months),Tenure,Tenure (Months),,,Account / Contract,Numeric,False,True,Churn = 1,raw model margin / log-odds
+Contract,Contract Type,Contract,Contract Type,,,Account / Contract,Categorical,False,True,Churn = 1,raw model margin / log-odds
+PaymentMethod,Payment Method,PaymentMethod,Payment Method,,,Billing,Categorical,False,True,Churn = 1,raw model margin / log-odds
+PaperlessBilling,Paperless Billing,PaperlessBilling,Paperless Billing,,,Billing,Binary,False,True,Churn = 1,raw model margin / log-odds
+MonthlyCharges,Monthly Charges,MonthlyCharges,Monthly Charges,,,Charges,Numeric,False,True,Churn = 1,raw model margin / log-odds
+TotalCharges,Total Charges,TotalCharges,Total Charges,,,Charges,Numeric,False,True,Churn = 1,raw model margin / log-odds
+InternetService,Internet Service,InternetService,Internet Service,,,Service,Categorical,False,True,Churn = 1,raw model margin / log-odds
+OnlineSecurity,Online Security,OnlineSecurity,Online Security,,,Service,Binary,False,True,Churn = 1,raw model margin / log-odds
+OnlineBackup,Online Backup,OnlineBackup,Online Backup,,,Service,Binary,False,True,Churn = 1,raw model margin / log-odds
+DeviceProtection,Device Protection,DeviceProtection,Device Protection,,,Service,Binary,False,True,Churn = 1,raw model margin / log-odds
+TechSupport,Tech Support,TechSupport,Tech Support,,,Service,Binary,False,True,Churn = 1,raw model margin / log-odds
+tenure_group,Tenure Group,tenure_group,Tenure Group,,,Engineered,Categorical Engineered,False,True,Churn = 1,raw model margin / log-odds
+service_diversity,Service Diversity Score,service_diversity,Service Diversity Score,,,Engineered,Numeric Engineered,False,True,Churn = 1,raw model margin / log-odds
+monthly_charges_ratio,Monthly Charges Ratio,monthly_charges_ratio,Monthly Charges Ratio,,,Engineered,Numeric Engineered,False,True,Churn = 1,raw model margin / log-odds
+is_paperless_electronic,Paperless & Electronic Payment Combo,is_paperless_electronic,Paperless & Electronic Payment Combo,,,Engineered,Binary Engineered,False,True,Churn = 1,raw model margin / log-odds

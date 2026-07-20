@@ -1,38 +1,47 @@
 # ==========================================
 # FILE: requirements.txt
-# PROJECT: Predictive Customer Churn
+# PROJECT: Predictive Customer Churn in Subscription Services
 # ==========================================
 
-# --- 1. THƯ VIỆN CHÍNH (MAIN DEPENDENCIES) ---
-# Xử lý và tính toán dữ liệu
+# --- 1. MAIN DEPENDENCIES ---
+# Data processing and numerical computation
 pandas>=2.0.0
 numpy>=1.23.5
 
-# Trực quan hóa dữ liệu
+# Data visualization
 matplotlib>=3.7.0
 seaborn>=0.12.0
 
-# Học máy và Mô hình hóa
+# Machine learning and modeling
 scikit-learn>=1.2.0
 xgboost>=2.0.0
 imbalanced-learn>=0.10.0
 
-# Môi trường Jupyter & Tích hợp IDE
+# Jupyter environment and IDE integration
 jupyter>=1.0.0
 ipykernel>=6.0.0
 
-# Xử lý SQL trên Python
+# SQL access from Python
 SQLAlchemy>=2.0.0
+psycopg2-binary>=2.9.0
+python-dotenv>=1.0.0
 pandasql>=0.7.3
 
-# Triển khai Dashboard Web App
+# Image handling used by report notebooks
+Pillow>=9.0.0
+
+# Supplementary models and interpretation
+lightgbm>=4.0.0
+catboost>=1.2.0
+shap>=0.42.0
+
+# Web dashboard support
 streamlit>=1.28.0
 
 # ==========================================
-# --- 2. THƯ VIỆN TÙY CHỌN (OPTIONAL) ---
-# ⚠️ LƯU Ý: Thư viện rpy2 (chạy R trên Python) rất dễ gây lỗi build C++ trên Windows.
-# Chỉ thành viên nào phụ trách phần ngôn ngữ R, và ĐÃ CÀI ĐẶT R Base trên máy,
-# thì mới xóa dấu # ở dòng bên dưới để cài đặt thủ công.
+# --- 2. OPTIONAL DEPENDENCIES ---
+# NOTE: rpy2 requires a local R installation and may require additional build tools on Windows.
+# Uncomment the line below only when R integration is required and R is already installed.
 #
 # rpy2>=3.5.0
 # ==========================================

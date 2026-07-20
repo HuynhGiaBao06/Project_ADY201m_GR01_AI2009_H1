@@ -1,0 +1,10 @@
+Scope,Metric,Leading_Model,Metric_Value,Evaluation_Basis,Interpretation
+Core RQ2,Recall,Logistic Regression,0.8035714285714286,"validation, threshold 0.50",Highest Recall within this specific scope; not a universal best-model claim.
+Core RQ2,F1,Logistic Regression,0.6392045454545454,"validation, threshold 0.50",Highest F1 within this specific scope; not a universal best-model claim.
+Core RQ2,ROC_AUC,Logistic Regression,0.8547726435935199,"validation, threshold 0.50",Highest ROC_AUC within this specific scope; not a universal best-model claim.
+Five-model default benchmark,Recall,Logistic Regression,0.8035714285714286,"validation, threshold 0.50",Highest Recall within this specific scope; not a universal best-model claim.
+Five-model default benchmark,F1,LightGBM,0.6453576864535768,"validation, threshold 0.50",Highest F1 within this specific scope; not a universal best-model claim.
+Five-model default benchmark,PR_AUC,Logistic Regression,0.6658389415759177,"validation, threshold 0.50",Highest PR_AUC within this specific scope; not a universal best-model claim.
+Boosting final test,Recall,CatBoost,0.8754448398576512,"test, threshold frozen from validation",Highest Recall within this specific scope; not a universal best-model claim.
+Boosting final test,F1,CatBoost,0.625158831003812,"test, threshold frozen from validation",Highest F1 within this specific scope; not a universal best-model claim.
+Boosting final test,PR_AUC,CatBoost,0.6638231677454531,"test, threshold frozen from validation",Highest PR_AUC within this specific scope; not a universal best-model claim.

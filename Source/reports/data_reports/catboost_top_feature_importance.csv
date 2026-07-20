@@ -1,0 +1,16 @@
+Model,Feature_Code,Feature_Display_Name,Base_Feature,Base_Feature_Display_Name,Encoded_Category,Encoded_Category_Display_Name,Feature_Group,Feature_Type,Is_Encoded,Importance_Type,Importance,Rank
+CatBoost,Dependents,Dependents,Dependents,Dependents,,,Customer Profile,Binary,False,CatBoost FeatureImportance,15.55768208769664,1
+CatBoost,Contract,Contract Type,Contract,Contract Type,,,Account / Contract,Categorical,False,CatBoost FeatureImportance,12.94757730465227,2
+CatBoost,TotalCharges,Total Charges,TotalCharges,Total Charges,,,Charges,Numeric,False,CatBoost FeatureImportance,10.51495194272202,3
+CatBoost,monthly_charges_ratio,Monthly Charges Ratio,monthly_charges_ratio,Monthly Charges Ratio,,,Engineered,Numeric Engineered,False,CatBoost FeatureImportance,10.198389837906161,4
+CatBoost,Tenure,Tenure (Months),Tenure,Tenure (Months),,,Account / Contract,Numeric,False,CatBoost FeatureImportance,8.920876962333638,5
+CatBoost,MonthlyCharges,Monthly Charges,MonthlyCharges,Monthly Charges,,,Charges,Numeric,False,CatBoost FeatureImportance,6.835458599821872,6
+CatBoost,PaymentMethod,Payment Method,PaymentMethod,Payment Method,,,Billing,Categorical,False,CatBoost FeatureImportance,6.330800500159951,7
+CatBoost,InternetService,Internet Service,InternetService,Internet Service,,,Service,Categorical,False,CatBoost FeatureImportance,5.886005307541197,8
+CatBoost,service_diversity,Service Diversity Score,service_diversity,Service Diversity Score,,,Engineered,Numeric Engineered,False,CatBoost FeatureImportance,4.5933970785614,9
+CatBoost,tenure_group,Tenure Group,tenure_group,Tenure Group,,,Engineered,Categorical Engineered,False,CatBoost FeatureImportance,4.116453070412203,10
+CatBoost,PaperlessBilling,Paperless Billing,PaperlessBilling,Paperless Billing,,,Billing,Binary,False,CatBoost FeatureImportance,3.0703423697451253,11
+CatBoost,Partner,Partner,Partner,Partner,,,Customer Profile,Binary,False,CatBoost FeatureImportance,2.559721594603456,12
+CatBoost,is_paperless_electronic,Paperless & Electronic Payment Combo,is_paperless_electronic,Paperless & Electronic Payment Combo,,,Engineered,Binary Engineered,False,CatBoost FeatureImportance,2.2349509331621116,13
+CatBoost,TechSupport,Tech Support,TechSupport,Tech Support,,,Service,Binary,False,CatBoost FeatureImportance,1.4191576031879074,14
+CatBoost,OnlineSecurity,Online Security,OnlineSecurity,Online Security,,,Service,Binary,False,CatBoost FeatureImportance,1.3784017387990408,15

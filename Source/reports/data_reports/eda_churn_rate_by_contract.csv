@@ -1,0 +1,4 @@
+feature_code,feature_display_name,category_code,category_display_name,count,churn_count,churn_rate,churn_rate_pct
+Contract,Contract Type,1,Month-to-month,3875,1655,0.4270967741935484,42.71
+Contract,Contract Type,12,One year,1473,166,0.11269517990495587,11.27
+Contract,Contract Type,24,Two year,1695,48,0.02831858407079646,2.83

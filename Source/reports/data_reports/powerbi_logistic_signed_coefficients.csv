@@ -1,0 +1,27 @@
+Feature_Code,Feature_Display_Name,Base_Feature,Base_Feature_Display_Name,Encoded_Category,Encoded_Category_Display_Name,Coefficient,Abs_Coefficient,Direction,Absolute_Rank,Sign_Rank,Reference_Category
+TotalCharges,Total Charges,TotalCharges,Total Charges,Not applicable,Not applicable,-0.766378386270552,0.766378386270552,Negative,1,1,Not applicable
+Contract_24,Contract Type = Two year,Contract,Contract Type,24,Two year,-0.6831497227922532,0.6831497227922532,Negative,2,2,Month-to-month
+Dependents_Yes,Dependents = Yes,Dependents,Dependents,Yes,Yes,-0.6499220641304283,0.6499220641304283,Negative,3,3,No
+InternetService_No,Internet Service = No Internet Service,InternetService,Internet Service,No,No Internet Service,-0.3782727647936569,0.3782727647936569,Negative,4,4,DSL
+Contract_12,Contract Type = One year,Contract,Contract Type,12,One year,-0.3361791948966391,0.3361791948966391,Negative,5,5,Month-to-month
+MonthlyCharges,Monthly Charges,MonthlyCharges,Monthly Charges,Not applicable,Not applicable,0.3347975144111827,0.3347975144111827,Positive,6,1,Not applicable
+monthly_charges_ratio,Monthly Charges Ratio,monthly_charges_ratio,Monthly Charges Ratio,Not applicable,Not applicable,0.3347975144111825,0.3347975144111825,Positive,7,2,Not applicable
+PaperlessBilling_1,Paperless Billing = Yes,PaperlessBilling,Paperless Billing,1,Yes,0.2368567930111031,0.2368567930111031,Positive,8,3,No
+Tenure,Tenure (Months),Tenure,Tenure (Months),Not applicable,Not applicable,-0.208398645029169,0.208398645029169,Negative,9,6,Not applicable
+InternetService_Fiber optic,Internet Service = Fiber optic,InternetService,Internet Service,Fiber optic,Fiber optic,0.159881739549961,0.159881739549961,Positive,10,4,DSL
+TechSupport_1,Tech Support = Yes,TechSupport,Tech Support,1,Yes,-0.1337033705442878,0.1337033705442878,Negative,11,7,No
+Partner_1,Partner = Yes,Partner,Partner,1,Yes,0.1259917653455766,0.1259917653455766,Positive,12,5,No
+PaymentMethod_Electronic check,Payment Method = Electronic check,PaymentMethod,Payment Method,Electronic check,Electronic check,0.1198558337024107,0.1198558337024107,Positive,13,6,Bank transfer (automatic)
+OnlineSecurity_1,Online Security = Yes,OnlineSecurity,Online Security,1,Yes,-0.1014760033022271,0.1014760033022271,Negative,14,8,No
+PaymentMethod_Mailed check,Payment Method = Mailed check,PaymentMethod,Payment Method,Mailed check,Mailed check,-0.0972038382786024,0.0972038382786024,Negative,15,9,Bank transfer (automatic)
+service_diversity,Service Diversity Score,service_diversity,Service Diversity Score,Not applicable,Not applicable,-0.0948434521537977,0.0948434521537977,Negative,16,10,Not applicable
+tenure_group_37-48 months,Tenure Group = 37-48 months,tenure_group,Tenure Group,37-48 months,37-48 months,0.0828179851524067,0.0828179851524067,Positive,17,7,0-12 months
+OnlineBackup_1,Online Backup = Yes,OnlineBackup,Online Backup,1,Yes,-0.0654766301026467,0.0654766301026467,Negative,18,11,No
+tenure_group_49-60 months,Tenure Group = 49-60 months,tenure_group,Tenure Group,49-60 months,49-60 months,0.0513528541451815,0.0513528541451815,Positive,19,8,0-12 months
+is_paperless_electronic,Paperless & Electronic Payment Combo,is_paperless_electronic,Paperless & Electronic Payment Combo,Not applicable,Not applicable,-0.0419190590582815,0.0419190590582815,Negative,20,12,Not applicable
+SeniorCitizen,Senior Citizen,SeniorCitizen,Senior Citizen,Not applicable,Not applicable,0.0413676245963812,0.0413676245963812,Positive,21,9,Not applicable
+tenure_group_25-36 months,Tenure Group = 25-36 months,tenure_group,Tenure Group,25-36 months,25-36 months,-0.038754089884483,0.038754089884483,Negative,22,13,0-12 months
+tenure_group_13-24 months,Tenure Group = 13-24 months,tenure_group,Tenure Group,13-24 months,13-24 months,-0.0381335343359499,0.0381335343359499,Negative,23,14,0-12 months
+tenure_group_61-72 months,Tenure Group = 61-72 months,tenure_group,Tenure Group,61-72 months,61-72 months,0.0321548683967576,0.0321548683967576,Positive,24,10,0-12 months
+DeviceProtection_1,Device Protection = Yes,DeviceProtection,Device Protection,1,Yes,0.0318646585462832,0.0318646585462832,Positive,25,11,No
+PaymentMethod_Credit card (automatic),Payment Method = Credit card automatic,PaymentMethod,Payment Method,Credit card (automatic),Credit card automatic,-0.028726065485028,0.028726065485028,Negative,26,15,Bank transfer (automatic)

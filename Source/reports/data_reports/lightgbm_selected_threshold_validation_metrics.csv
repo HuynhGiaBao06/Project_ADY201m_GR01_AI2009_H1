@@ -1,0 +1,2 @@
+Model,Split,Threshold,Accuracy,Precision,Recall,F1_Score,ROC_AUC,PR_AUC,TP,FP,TN,FN,False_Positive_Rate,False_Negative_Rate,Meets_Recall_Target,Target_Recall,Recall_Target_Met,Selection_Rule
+LightGBM,validation,0.27,0.7244318181818182,0.48879837067209775,0.8571428571428571,0.622568093385214,0.8485226435935198,0.6516368332809965,240,251,525,40,0.3234536082474227,0.14285714285714285,True,0.85,True,"Recall target met; highest F1 with 1e-6 tolerance, then higher precision and threshold."

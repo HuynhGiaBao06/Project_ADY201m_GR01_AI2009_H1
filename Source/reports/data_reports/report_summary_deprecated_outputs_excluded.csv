@@ -1,0 +1,13 @@
+Deprecated_Output_Excluded,Reason
+core_model_selected_threshold_validation_comparison.csv,Historical scope; excluded from approved mappings and manifest without deleting the file.
+core_model_selected_threshold_test_comparison.csv,Historical scope; excluded from approved mappings and manifest without deleting the file.
+core_model_threshold_sensitivity_combined.csv,Historical scope; excluded from approved mappings and manifest without deleting the file.
+report_summary_model_comparison.csv,Historical scope; excluded from approved mappings and manifest without deleting the file.
+report_summary_threshold_selection.csv,Historical scope; excluded from approved mappings and manifest without deleting the file.
+model_comparison_01_selected_test_metrics_bar.png,Historical scope; excluded from approved mappings and manifest without deleting the file.
+model_comparison_02_default_validation_metrics_bar.png,Historical scope; excluded from approved mappings and manifest without deleting the file.
+model_comparison_03_selected_validation_metrics_bar.png,Historical scope; excluded from approved mappings and manifest without deleting the file.
+model_comparison_04_selected_thresholds.png,Historical scope; excluded from approved mappings and manifest without deleting the file.
+model_comparison_05_validation_vs_test_recall_f1.png,Historical scope; excluded from approved mappings and manifest without deleting the file.
+model_comparison_06_precision_recall_tradeoff_test.png,Historical scope; excluded from approved mappings and manifest without deleting the file.
+model_comparison_07_threshold_sensitivity_recall.png,Historical scope; excluded from approved mappings and manifest without deleting the file.

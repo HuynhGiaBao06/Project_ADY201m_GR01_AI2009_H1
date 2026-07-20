@@ -1,52 +1,156 @@
-📞 Predictive Customer Churn in Telecommunication Services
+# Predictive Customer Churn in Subscription Services
 
-📌 1. Tổng quan dự án (Project Overview)
+## 1. Project Overview
 
-Dự án tập trung vào việc phân tích và dự đoán hành vi rời bỏ (churn) của khách hàng trong lĩnh vực dịch vụ Viễn thông, sử dụng tập dữ liệu IBM Telco Customer Churn. Thông qua việc sử dụng các mô hình học máy (Machine Learning), nhóm hướng tới việc xác định các yếu tố rủi ro và đề xuất các chiến lược giữ chân khách hàng (retention strategies).
+This project analyzes customer churn in telecommunications subscription services using the IBM Telco Customer Churn dataset. It combines exploratory analysis, PostgreSQL-based data staging, reproducible machine-learning pipelines, model comparison, model interpretation, and a Power BI dashboard to support customer-retention decisions.
 
-Vấn đề kinh doanh (Business Problem)
+## 2. Research Objectives and Questions
 
-Doanh nghiệp đang đối mặt với sự thất thoát doanh thu đáng kể do khách hàng hủy dịch vụ hoặc rời bỏ sớm. Bài toán kinh doanh cốt lõi ở đây là giảm thiểu chi phí tìm kiếm khách hàng mới (CAC) thông qua việc dự báo chính xác và giữ chân khách hàng cũ.
+The project aims to identify customers at high risk of churn, explain the strongest predictive factors, and support cost-aware retention prioritization.
 
-🚀 2. Hướng dẫn "Nhập môn" cho thành viên (Onboarding Guide)
+1. Which factors have the strongest association with customer churn probability?
+2. How do Logistic Regression, Random Forest, and XGBoost compare at the default validation threshold?
+3. Which customer groups should receive retention attention first when intervention resources are limited?
 
-Nếu bạn là thành viên mới tham gia dự án, hãy làm theo đúng thứ tự checklist dưới đây để bắt nhịp nhanh nhất:
+## 3. Dataset Overview
 
-* [ ] Bước 1: Hiểu bức tranh tổng thể. Đọc lướt qua các phần còn lại của file README.md để nắm được bài toán kinh doanh.
-* [ ] Bước 2: Nắm quy trình quản lý task. Truy cập không gian làm việc chính thức trên Notion và tham gia kênh thảo luận trên Discord để xem tiến độ công việc. Tuyệt đối tuân thủ phân công theo lộ trình Sprint rõ ràng, không tự do kéo thả task.
-* [ ] Bước 3: Thiết lập môi trường code. Mở file CONTRIBUTING.md và làm đúng theo Mục 1 để clone code về máy và cài thư viện từ requirements.txt.
-* [ ] Bước 4: Học luật làm việc nhóm trên Git. Đọc các phần còn lại của CONTRIBUTING.md để biết cách tạo nhánh (branch), viết commit và tạo Pull Request (PR).
+The project uses 7,043 telecommunications customers. The 16-column base dataset is split into training, validation, and locked test checkpoints using a stratified 70%/15%/15% allocation:
 
-🏗️ 3. Kiến trúc Dữ liệu & Pipeline (Single Source of Truth)
+| Split | Shape | Purpose |
+| ----- | ----- | ------- |
+| Train | 4930 × 16 | Fit feature and preprocessing transformations and train models |
+| Validation | 1056 × 16 | Compare models and select operating thresholds |
+| Test | 1057 × 16 | Perform final evaluation after decisions are frozen |
 
-Đây là quy định kỹ thuật cao nhất của dự án. Mọi xử lý dữ liệu phải tuân thủ nghiêm ngặt mô hình phân nhánh sau (Tham khảo sơ đồ chi tiết tại `Pipeline.md`):
+Four features are engineered after splitting: `tenure_group`, `service_diversity`, `monthly_charges_ratio`, and `is_paperless_electronic`.
 
-* Luồng Global (Giai đoạn 1): Tiến hành làm sạch cơ bản, xử lý missing value, mã hóa phân loại (encoding) và xử lý lỗi logic. Đặc biệt lưu ý: Không đụng chạm hay xóa bỏ Outlier.
-* Luồng Local (Giai đoạn 2): Độc lập sử dụng `sklearn.pipeline.Pipeline` theo từng nhánh mô hình.
-  * Nhánh 1 (Logistic Regression): Thiết kế Local Pipeline gồm các bước Capping/Quantile Outliers và StandardScaler trước khi đưa vào mô hình.
-  * Nhánh 2 (Random Forest / XGBoost): Truyền trực tiếp tập dữ liệu chứa outlier vào mô hình mà không thực hiện scaling hay lọc ngoại lệ.
+## 4. Project Architecture
 
-❓ 4. Câu hỏi nghiên cứu (Research Questions)
+The main data flow is:
 
-1. Yếu tố nào tác động mạnh mẽ nhất đến xác suất rời bỏ dịch vụ của khách hàng?.
-2. Giữa các thuật toán Logistic Regression, Random Forest và XGBoost, mô hình nào đem lại hiệu suất dự đoán chính xác nhất?.
-3. Doanh nghiệp nên ưu tiên phân bổ nguồn lực giữ chân nhóm khách hàng nào để tối ưu hóa chi phí và hiệu quả?.
+```text
+Raw data
+→ PostgreSQL / Neon staging layer
+→ db_predictive_churn
+→ vw_cleaning_data
+→ train / validation / test checkpoints
+→ shared feature engineering
+→ model-specific preprocessing
+→ model evaluation and interpretation
+→ reports, figures, and Power BI dashboard
+```
 
-🛠 5. Công nghệ & Thư viện sử dụng (Tech Stack)
+See [`Source/docs/dataflow.md`](Source/docs/dataflow.md) and [`Source/docs/pipeline.md`](Source/docs/pipeline.md) for the detailed lifecycle and modeling design.
 
-* Ngôn ngữ: Python, T-SQL.
-* Quản lý Cơ sở dữ liệu: Microsoft SQL Server.
-* Xử lý dữ liệu: Pandas, NumPy.
-* Trực quan hóa: Matplotlib, Seaborn, Power BI/Tableau.
-* Học máy: Scikit-learn, XGBoost.
-* Quản lý dự án & Môi trường: Jupyter Notebook, GitHub, Notion, Discord.
+## 5. Repository Structure
 
-📊 6. Dữ liệu & Tiền xử lý (Data & Preparation)
+```text
+README.md
+requirements.txt
+Source/
+├── data/          # Raw, checkpoint, EDA, and runtime-log data areas
+├── docs/          # Canonical database, dataflow, and pipeline documentation
+├── models/        # Saved model artifacts
+├── notebooks/     # Numbered analysis, modeling, interpretation, and export notebooks
+├── reports/       # Tables, summaries, and figures
+├── sql/           # PostgreSQL scripts and queries
+└── src/           # Reusable ingestion, preprocessing, and utility modules
+```
 
-* Nguồn: Telco Customer Churn: IBM dataset.
-* Đặc trưng chính: Thông tin nhân khẩu học, hợp đồng & thanh toán, và danh sách dịch vụ viễn thông.
-* Kỹ nghệ đặc trưng (Feature Engineering):
-  * tenure_group: Phân nhóm thời gian sử dụng dịch vụ.
-  * service_diversity: Đo lường mức độ đa dạng dịch vụ phụ trợ.
-  * monthly_charges_ratio: Tỷ lệ chi phí hàng tháng.
-  * is_paperless_electronic: Hành vi thanh toán điện tử.
+## 6. Models
+
+### Core Models
+
+The core research comparison evaluates:
+
+* Logistic Regression
+* Random Forest
+* XGBoost
+
+### Supplementary Benchmarks
+
+The project also benchmarks:
+
+* LightGBM
+* CatBoost
+
+These supplementary models extend the benchmark; they do not replace the three core research models.
+
+## 7. Evaluation Strategy
+
+The core models are compared on the validation set at `threshold = 0.50`. Threshold sensitivity analysis focuses on XGBoost, LightGBM, and CatBoost with a Recall target of at least `0.85`. Thresholds are selected using validation data. The locked test set is evaluated only after model and threshold decisions are frozen.
+
+## 8. Model Interpretation
+
+The interpretation workflow includes signed Logistic Regression coefficients, Random Forest feature importance, XGBoost feature importance, XGBoost SHAP analysis, and cross-model comparison. SHAP explains the XGBoost churn-class output and is not presented as a causal analysis.
+
+## 9. How to Set Up and Run the Project
+
+Use Python 3.10 or newer and work from the repository root.
+
+1. Create and activate a virtual environment.
+
+   ```bash
+   python -m venv venv
+   ```
+
+   On Windows:
+
+   ```powershell
+   venv\Scripts\activate
+   ```
+
+   On macOS or Linux:
+
+   ```bash
+   source venv/bin/activate
+   ```
+
+2. Install the declared dependencies.
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Copy the repository-root `.env.example` to a repository-root `.env` and supply the required PostgreSQL/Neon connection values. Never commit credentials.
+
+4. Verify the preprocessing entry point without database ingestion when needed:
+
+   ```powershell
+   python -m Source.src.main
+   ```
+
+   The default command reuses existing checkpoints. Do not add `--force-ingestion` or
+   `--use-database` for a checkpoint-only verification.
+
+5. Start Jupyter and run the active notebooks in dependency order when reproducing the full workflow:
+
+   ```text
+   01_EDA_and_Feature_Engineering.ipynb
+   02_Logistic_Regression.ipynb
+   03_tree_models_train.ipynb
+   04_xgboost_models_train.ipynb
+   08_lightgbm_models_train.ipynb
+   09_catboost_models_train.ipynb
+   05_Model_Comparison.ipynb
+   06_Model_Interpretation_SHAP.ipynb
+   07_Report_Export_Summary.ipynb
+   10_section_4_4_visualizations.ipynb
+   ```
+
+Database availability and existing checkpoints determine whether ingestion must be rerun. Do not use the locked test set for preprocessing fitting, model selection, or threshold selection.
+
+## 10. Key Outputs
+
+Key outputs are stored under `Source/reports/` and include model-comparison summaries, threshold-sensitivity results, feature-importance outputs, XGBoost SHAP interpretation, report-ready tables, and figures.
+
+## 11. Dashboard
+
+The delivered interactive dashboard is [`[ADY201m] Dashboard.pbix`]([ADY201m]%20Dashboard.pbix). It summarizes churn performance and high-risk customer segments. Notebook 10 consumes the retained, validated report-ready CSV exports under `Source/reports/data_reports/` to produce its final interpretation visualizations.
+
+## 12. Documentation
+
+* [`Source/docs/database_guideline.md`](Source/docs/database_guideline.md): PostgreSQL/Neon architecture, configuration, roles, and credential safety
+* [`Source/docs/dataflow.md`](Source/docs/dataflow.md): dataset lifecycle, checkpoint ownership, and leakage controls
+* [`Source/docs/pipeline.md`](Source/docs/pipeline.md): preprocessing branches, models, evaluation, interpretation, and exports
+* [`Source/reports/data_reports/report_summary_markdown.md`](Source/reports/data_reports/report_summary_markdown.md): validated result summary

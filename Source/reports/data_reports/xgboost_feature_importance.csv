@@ -1,0 +1,19 @@
+XGBoost_Feature_Key,Feature_Position,X_train_Column,Raw_Feature_Name,Feature_Code,Feature_Display_Name,Base_Feature,Base_Feature_Display_Name,Encoded_Category,Encoded_Category_Display_Name,Feature_Group,Feature_Type,Importance,Rank
+Contract,4,Contract,Contract,Contract,Contract Type,Contract,Contract Type,,,Account / Contract,Categorical,106.53067779541016,1
+Dependents,2,Dependents,Dependents,Dependents,Dependents,Dependents,Dependents,,,Customer Profile,Binary,31.765199661254883,2
+InternetService,9,InternetService,InternetService,InternetService,Internet Service,InternetService,Internet Service,,,Service,Categorical,25.56714630126953,3
+tenure_group,14,tenure_group,tenure_group,tenure_group,Tenure Group,tenure_group,Tenure Group,,,Engineered,Categorical Engineered,13.311165809631348,4
+Tenure,3,Tenure,Tenure,Tenure,Tenure (Months),Tenure,Tenure (Months),,,Account / Contract,Numeric,10.931134223937988,5
+PaperlessBilling,6,PaperlessBilling,PaperlessBilling,PaperlessBilling,Paperless Billing,PaperlessBilling,Paperless Billing,,,Billing,Binary,9.441068649291992,6
+TechSupport,13,TechSupport,TechSupport,TechSupport,Tech Support,TechSupport,Tech Support,,,Service,Binary,9.2050199508667,7
+OnlineSecurity,10,OnlineSecurity,OnlineSecurity,OnlineSecurity,Online Security,OnlineSecurity,Online Security,,,Service,Binary,7.872219085693359,8
+MonthlyCharges,7,MonthlyCharges,MonthlyCharges,MonthlyCharges,Monthly Charges,MonthlyCharges,Monthly Charges,,,Charges,Numeric,7.493329048156738,9
+service_diversity,15,service_diversity,service_diversity,service_diversity,Service Diversity Score,service_diversity,Service Diversity Score,,,Engineered,Numeric Engineered,7.201777935028076,10
+monthly_charges_ratio,16,monthly_charges_ratio,monthly_charges_ratio,monthly_charges_ratio,Monthly Charges Ratio,monthly_charges_ratio,Monthly Charges Ratio,,,Engineered,Numeric Engineered,6.8163933753967285,11
+PaymentMethod,5,PaymentMethod,PaymentMethod,PaymentMethod,Payment Method,PaymentMethod,Payment Method,,,Billing,Categorical,6.138869285583496,12
+TotalCharges,8,TotalCharges,TotalCharges,TotalCharges,Total Charges,TotalCharges,Total Charges,,,Charges,Numeric,5.385225296020508,13
+OnlineBackup,11,OnlineBackup,OnlineBackup,OnlineBackup,Online Backup,OnlineBackup,Online Backup,,,Service,Binary,5.0119194984436035,14
+Partner,1,Partner,Partner,Partner,Partner,Partner,Partner,,,Customer Profile,Binary,4.7954325675964355,15
+is_paperless_electronic,17,is_paperless_electronic,is_paperless_electronic,is_paperless_electronic,Paperless & Electronic Payment Combo,is_paperless_electronic,Paperless & Electronic Payment Combo,,,Engineered,Binary Engineered,4.453277111053467,16
+DeviceProtection,12,DeviceProtection,DeviceProtection,DeviceProtection,Device Protection,DeviceProtection,Device Protection,,,Service,Binary,4.4419755935668945,17
+SeniorCitizen,0,SeniorCitizen,SeniorCitizen,SeniorCitizen,Senior Citizen,SeniorCitizen,Senior Citizen,,,Customer Profile,Binary,4.347800254821777,18

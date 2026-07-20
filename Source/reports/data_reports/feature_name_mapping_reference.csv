@@ -1,0 +1,19 @@
+Feature_Code,Feature_Display_Name,Feature_Group,Feature_Type,Used_In_EDA,Used_In_Logistic,Used_In_Tree_Models,Notes
+SeniorCitizen,Senior Citizen,Customer Profile,Binary,True,True,True,Canonical refactor feature
+Partner,Partner,Customer Profile,Binary,True,True,True,Canonical refactor feature
+Dependents,Dependents,Customer Profile,Binary,True,True,True,Canonical refactor feature
+Tenure,Tenure,Account / Contract,Numeric,True,True,True,Canonical refactor feature
+Contract,Contract Type,Account / Contract,Categorical,True,True,True,Canonical refactor feature
+PaymentMethod,Payment Method,Billing,Categorical,True,True,True,Canonical refactor feature
+PaperlessBilling,Paperless Billing,Billing,Binary,True,True,True,Canonical refactor feature
+MonthlyCharges,Monthly Charges,Charges,Numeric,True,True,True,Canonical refactor feature
+TotalCharges,Total Charges,Charges,Numeric,True,True,True,Canonical refactor feature
+InternetService,Internet Service,Service,Categorical,True,True,True,Canonical refactor feature
+OnlineSecurity,Online Security,Service,Binary,True,True,True,Canonical refactor feature
+OnlineBackup,Online Backup,Service,Binary,True,True,True,Canonical refactor feature
+DeviceProtection,Device Protection,Service,Binary,True,True,True,Canonical refactor feature
+TechSupport,Tech Support,Service,Binary,True,True,True,Canonical refactor feature
+tenure_group,Tenure Group,Engineered,Categorical Engineered,True,True,True,Canonical refactor feature
+service_diversity,Service Diversity Score,Engineered,Numeric Engineered,True,True,True,Canonical refactor feature
+monthly_charges_ratio,Monthly Charges Ratio,Engineered,Numeric Engineered,True,True,True,Canonical refactor feature
+is_paperless_electronic,Paperless & Electronic Payment Combo,Engineered,Binary Engineered,True,True,True,Canonical refactor feature

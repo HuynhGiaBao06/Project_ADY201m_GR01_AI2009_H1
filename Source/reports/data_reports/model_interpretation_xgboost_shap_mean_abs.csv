@@ -1,0 +1,19 @@
+Feature_Code,Feature_Display_Name,Mean_Abs_SHAP,Model,Explained_Class,SHAP_Output_Scale,Rank,Driver_Group
+Contract,Contract Type,0.8686886,XGBoost,Churn = 1,raw model margin / log-odds,1,Contract type
+Dependents,Dependents,0.6185578,XGBoost,Churn = 1,raw model margin / log-odds,2,Other customer or service profile
+Tenure,Tenure (Months),0.5598079,XGBoost,Churn = 1,raw model margin / log-odds,3,Tenure
+MonthlyCharges,Monthly Charges,0.47173706,XGBoost,Churn = 1,raw model margin / log-odds,4,Monthly charges / total charges
+TotalCharges,Total Charges,0.2257202,XGBoost,Churn = 1,raw model margin / log-odds,5,Monthly charges / total charges
+PaperlessBilling,Paperless Billing,0.17897719,XGBoost,Churn = 1,raw model margin / log-odds,6,Paperless billing
+PaymentMethod,Payment Method,0.17232336,XGBoost,Churn = 1,raw model margin / log-odds,7,Payment method
+InternetService,Internet Service,0.16064452,XGBoost,Churn = 1,raw model margin / log-odds,8,Internet service
+Partner,Partner,0.106578775,XGBoost,Churn = 1,raw model margin / log-odds,9,Other customer or service profile
+TechSupport,Tech Support,0.09674089,XGBoost,Churn = 1,raw model margin / log-odds,10,Tech support / online security
+OnlineSecurity,Online Security,0.084360525,XGBoost,Churn = 1,raw model margin / log-odds,11,Tech support / online security
+service_diversity,Service Diversity Score,0.07326173,XGBoost,Churn = 1,raw model margin / log-odds,12,Service diversity
+monthly_charges_ratio,Monthly Charges Ratio,0.065803654,XGBoost,Churn = 1,raw model margin / log-odds,13,Monthly charges / total charges
+OnlineBackup,Online Backup,0.05089837,XGBoost,Churn = 1,raw model margin / log-odds,14,Other customer or service profile
+tenure_group,Tenure Group,0.03646415,XGBoost,Churn = 1,raw model margin / log-odds,15,Tenure
+SeniorCitizen,Senior Citizen,0.03639456,XGBoost,Churn = 1,raw model margin / log-odds,16,Other customer or service profile
+is_paperless_electronic,Paperless & Electronic Payment Combo,0.021407684,XGBoost,Churn = 1,raw model margin / log-odds,17,Payment method
+DeviceProtection,Device Protection,0.017861657,XGBoost,Churn = 1,raw model margin / log-odds,18,Other customer or service profile

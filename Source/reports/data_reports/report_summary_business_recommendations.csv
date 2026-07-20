@@ -1,0 +1,5 @@
+Recommendation,Predictive_Evidence,Caveat
+Prioritize contract and early-tenure retention review,Contract type and tenure rank consistently across interpretation methods.,Predictive association; no causal claim.
+Review high-charge customer experience,Monthly and total charges appear among cross-method predictive drivers.,Predictive association; no causal claim.
+"Use support, security and service signals for targeted screening",Support/security and internet-service variables contribute to churn prediction.,Interventions require separate causal evaluation.
+Select an operating model by the metric required,"Recall, F1 and PR_AUC leaders differ by scope.",No model is declared universally best.

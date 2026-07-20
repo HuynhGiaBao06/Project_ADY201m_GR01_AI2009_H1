@@ -218,18 +218,13 @@ __marimo__/
 .streamlit/secrets.toml
 
 # ===================================================
-# BỔ SUNG RIÊNG CHO DỰ ÁN DATA/MACHINE LEARNING
+# Project-specific data and machine-learning rules
 # ===================================================
 
-# 1. Chặn toàn bộ thư mục dữ liệu (Tuyệt đối không push data lên Git)
-data/
-*.csv
-*.tsv
-*.xlsx
-*.xls
-*.json
+# 1. Project data and validated report exports are submission assets.
+# Keep Source/data/**/*.csv and Source/reports/**/*.csv eligible for tracking.
 
-# 2. Chặn các thư mục/file chứa mô hình ML đã huấn luyện (dung lượng thường rất lớn)
+# 2. Exclude generated trained-model binaries unless explicitly approved.
 models/
 *.pkl
 *.joblib
@@ -238,8 +233,7 @@ models/
 !artifacts/preprocessing_pipeline.pkl
 
 
-# 3. Chặn các file Dashboard PowerBI / Tableau (nếu có lưu cục bộ)
-*.pbix
+# 3. Dashboard submission assets remain eligible for tracking.
 *.twb
 *.twbx
 
@@ -253,16 +247,4 @@ models/
 *.gz
 *.fls
 *.fdb_latexmk
-<<<<<<< HEAD
-<<<<<<< HEAD
 *.synctex.gz
-# Môi trường
-.env
-=======
-*.synctex.gz
->>>>>>> feat01-docs-project-document
-=======
-*.synctex.gz
-# Môi trường
-.env
->>>>>>> feat02-data-processing
