@@ -1,7 +1,0 @@
-Model,Method,Unit,Detailed_SHAP,Source_Output,Cross_Method_Comparison_Rule
-Logistic Regression,Coefficients,logistic-model coefficient,False,model_interpretation_logistic_coefficients_summary.csv,Compare feature ranks/overlap only; do not compare raw magnitudes.
-Random Forest,Impurity importance,impurity importance,False,model_interpretation_random_forest_top_features.csv,Compare feature ranks/overlap only; do not compare raw magnitudes.
-XGBoost,Gain importance,mean gain,False,model_interpretation_xgboost_top_features.csv,Compare feature ranks/overlap only; do not compare raw magnitudes.
-LightGBM,Gain importance,gain importance,False,model_interpretation_lightgbm_top_features.csv,Compare feature ranks/overlap only; do not compare raw magnitudes.
-CatBoost,FeatureImportance,CatBoost native FeatureImportance,False,model_interpretation_catboost_top_features.csv,Compare feature ranks/overlap only; do not compare raw magnitudes.
-XGBoost,SHAP,raw model margin / log-odds for Churn = 1,True,model_interpretation_xgboost_shap_mean_abs.csv,Compare feature ranks/overlap only; do not compare raw magnitudes.

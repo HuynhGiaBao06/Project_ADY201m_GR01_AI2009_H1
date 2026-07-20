@@ -1,7 +1,0 @@
-Criterion,Model,Metric,Value
-Best model by Recall,XGBoost,Recall,0.8647686832740213
-Best model by F1,Logistic Regression,F1,0.6266318537859008
-Best model by ROC_AUC,Logistic Regression,ROC_AUC,0.8508112594929743
-Best model by PR_AUC,Logistic Regression,PR_AUC,0.6639177072633882
-Recommended_Balanced_Model,Logistic Regression,F1 among recall-target models,0.6266318537859008
-Recommended_Recall_Focused_Model,XGBoost,Recall,0.8647686832740213

@@ -1,7 +1,0 @@
-Recommendation_Item,Model,Short_Justification
-Recommended balanced model,Logistic Regression,Selected from final test metrics as the best balance among recall-target models.
-Recommended recall-focused model,XGBoost,Selected from final test metrics for maximum churn capture.
-Best Recall model,XGBoost,Loaded from best model summary.
-Best F1 model,Logistic Regression,Loaded from best model summary.
-Best ROC_AUC model,Logistic Regression,Loaded from best model summary.
-Best PR_AUC model,Logistic Regression,Loaded from best model summary.

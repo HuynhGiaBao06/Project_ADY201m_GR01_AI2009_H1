@@ -1,5 +1,0 @@
-Split,Threshold,Actual,Predicted,Count
-validation,0.38,0,0,544
-validation,0.38,0,1,232
-validation,0.38,1,0,41
-validation,0.38,1,1,239

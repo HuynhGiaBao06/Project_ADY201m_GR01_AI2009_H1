@@ -1,4 +1,0 @@
-Figure_ID,Figure_Name,Source_CSV,PDF_Path,PNG_Path,Width_Inches,Height_Inches,PNG_DPI,Rows_Plotted,Generated_At,QA_Status
-4.4-A,Cross-model feature-rank matrix,reports/data_reports/powerbi_cross_model_feature_rank.csv,reports/figures/section_4_4_01_cross_model_feature_rank_matrix.pdf,reports/figures/section_4_4_01_cross_model_feature_rank_matrix.png,7.0,5.55,450,12,2026-07-13T15:25:54+00:00,PASS
-4.4-B,Logistic signed coefficients,reports/data_reports/powerbi_logistic_signed_coefficients.csv,reports/figures/section_4_4_02_logistic_signed_coefficients.pdf,reports/figures/section_4_4_02_logistic_signed_coefficients.png,7.0,5.45,450,10,2026-07-13T15:25:54+00:00,PASS
-4.4-C,XGBoost global SHAP importance,reports/data_reports/powerbi_xgboost_shap_global.csv,reports/figures/section_4_4_03_xgboost_global_shap_importance.pdf,reports/figures/section_4_4_03_xgboost_global_shap_importance.png,7.0,4.95,450,10,2026-07-13T15:25:54+00:00,PASS

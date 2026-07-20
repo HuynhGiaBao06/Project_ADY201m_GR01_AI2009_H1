@@ -1,2 +1,0 @@
-Model,Split,Threshold,Accuracy,Precision,Recall,F1_Score,ROC_AUC,PR_AUC,TP,FP,TN,FN,False_Positive_Rate,False_Negative_Rate,Meets_Recall_Target,Target_Recall,Recall_Target_Met,Selection_Rule
-Random Forest,validation,0.17,0.7064393939393939,0.47093023255813954,0.8678571428571429,0.6105527638190955,0.8452135493372606,0.6455681291902687,243,273,503,37,0.35180412371134023,0.13214285714285715,True,0.85,True,"Recall target met; selected highest F1-score, with near ties resolved by higher precision."

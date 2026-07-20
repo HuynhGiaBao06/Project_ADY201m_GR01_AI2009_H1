@@ -1,3 +1,0 @@
-feature_code,feature_display_name,category_code,category_display_name,count,churn_count,churn_rate,churn_rate_pct
-PaperlessBilling,Paperless Billing,1,Yes,4171,1400,0.33565092304003835,33.57
-PaperlessBilling,Paperless Billing,0,No,2872,469,0.1633008356545961,16.33

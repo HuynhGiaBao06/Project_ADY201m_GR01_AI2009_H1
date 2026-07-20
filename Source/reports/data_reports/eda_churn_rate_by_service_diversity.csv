@@ -1,6 +1,0 @@
-feature_code,feature_display_name,category_code,category_display_name,count,churn_count,churn_rate,churn_rate_pct
-service_diversity,Service Diversity Score,1,1,1467,570,0.3885480572597137,38.85
-service_diversity,Service Diversity Score,0,0,2793,831,0.2975295381310419,29.75
-service_diversity,Service Diversity Score,2,2,1372,326,0.23760932944606414,23.76
-service_diversity,Service Diversity Score,3,3,941,117,0.12433581296493093,12.43
-service_diversity,Service Diversity Score,4,4,470,25,0.05319148936170213,5.32

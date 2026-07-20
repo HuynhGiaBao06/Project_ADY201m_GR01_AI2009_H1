@@ -1,5 +1,0 @@
-Split,Threshold,Actual,Predicted,Count
-test,0.27,0,0,499
-test,0.27,0,1,277
-test,0.27,1,0,36
-test,0.27,1,1,245

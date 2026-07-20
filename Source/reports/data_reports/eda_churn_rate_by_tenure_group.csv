@@ -1,7 +1,0 @@
-feature_code,feature_display_name,category_code,category_display_name,count,churn_count,churn_rate,churn_rate_pct
-tenure_group,Tenure Group,0-12 months,0-12 months,2186,1037,0.47438243366880145,47.44
-tenure_group,Tenure Group,13-24 months,13-24 months,1024,294,0.287109375,28.71
-tenure_group,Tenure Group,25-36 months,25-36 months,832,180,0.21634615384615385,21.63
-tenure_group,Tenure Group,37-48 months,37-48 months,762,145,0.19028871391076116,19.03
-tenure_group,Tenure Group,49-60 months,49-60 months,832,120,0.14423076923076922,14.42
-tenure_group,Tenure Group,61-72 months,61-72 months,1407,93,0.06609808102345416,6.61

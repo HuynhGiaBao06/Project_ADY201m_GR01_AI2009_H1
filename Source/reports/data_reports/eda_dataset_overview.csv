@@ -1,8 +1,0 @@
-metric,value
-rows,7043
-columns,20
-duplicate_rows,0
-churn_count,1869
-non_churn_count,5174
-churn_rate,0.2654
-data_source,D:\FPTU_Study\SU2026\ADY201m\Project_ADY201m_GR01_AI2009_H1\churn_pipeline_v2\data\raw_data\data_raw.csv

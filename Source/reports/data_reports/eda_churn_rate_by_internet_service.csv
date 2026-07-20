@@ -1,4 +1,0 @@
-feature_code,feature_display_name,category_code,category_display_name,count,churn_count,churn_rate,churn_rate_pct
-InternetService,Internet Service,Fiber optic,Fiber optic,3096,1297,0.4189276485788114,41.89
-InternetService,Internet Service,DSL,DSL,2421,459,0.1895910780669145,18.96
-InternetService,Internet Service,No,No Internet Service,1526,113,0.07404980340760157,7.4

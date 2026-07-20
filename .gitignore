@@ -248,3 +248,34 @@ models/
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Local IDE/tool metadata
+.vscode/
+.agents/
+
+# Data CSV files
+Source/data/**/*.csv
+
+# Generated reports
+Source/reports/**/*.csv
+Source/reports/**/*.png
+
+# Generated model binaries
+*.pkl
+*.joblib
+*.pickle
+*.bin
+
+# OS files
+.DS_Store
+Thumbs.db
